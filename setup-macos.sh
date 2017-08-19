@@ -14,6 +14,9 @@ for file in bin/* scripts/*; do
 	chmod -vv +x "$file"
 done
 
+# backup existing files
+source "scripts/backup-existing-files.sh"
+
 # create symlinks for dotfiles
 source "scripts/create-symlinks.sh"
 
