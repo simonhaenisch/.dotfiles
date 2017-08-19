@@ -1,0 +1,7 @@
+[push]
+	default = simple
+	recurseSubmodules = on-demand
+[pull]
+	recurseSubmodules = on-demand
+[core]
+	excludesfile = ~/.gitignore

@@ -1,0 +1,50 @@
+# cd
+alias cdh='cd ~'
+alias cds='cd ~/Stuff'
+alias cdjb='cd ~/Work/JITBug'
+alias cdjbapi='cd ~/Work/JITBug/WebAPI/JitBugApi'
+alias cdjbweb='cd ~/Work/JITBug/WebApp/jitbug_webapp'
+alias cdjbapp='cd ~/Work/JITBug/MobileApp/JITbug'
+alias cdj='cd ~/Work/justine'
+alias cdec='cd ~/Documents/Studium/eCollege'
+
+# system
+alias e='$EDITOR' # as editor shortcut
+alias l='ls -alph' # all, long, slash after dirs, human readable
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+alias ln='ln -v'
+alias cp_p='rsync -WavP --human-readable --progress' # copy with progress
+alias cb='pbcopy' # clipboard shortcut
+alias dsstore_clean='find . -type f -name .DS_Store -ls -delete'
+alias cal='cal | grep -C6 --color -e " $(date +%e)" -e "^(date +%e)"'
+alias cask='brew cask'
+alias zap='brew cask zap'
+alias gcc11='gcc -std=c++11 -Wall'
+alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
+alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
+
+# utilities
+alias gst='git status'
+alias gd='git diff .'
+alias gdc='git diff --cached'
+alias bs='browser-sync start --directory --server --files "*.js, *.html, *.css"'
+alias ytdla='youtube-dl --extract-audio --audio-format mp3'
+
+# npm
+alias npmi='npm install'
+alias npmr='npm remove'
+alias npmins='npm i --no-save'
+alias npmrns='npm r --no-save'
+alias npmig='npm i --global'
+alias npmrg='npm r --global'
+alias npmid='npm i --save-dev'
+alias npmrd='npm r --save-dev'
+alias npmu='npm update'
+alias npmug='npm update --global'
+alias npmlsg='npm list --global --depth=0'
+alias npmog='npm outdated --global --depth=0'
+
+# other
+alias is='ionic serve'
