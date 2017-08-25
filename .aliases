@@ -27,6 +27,7 @@ alias bs='browser-sync start --directory --server --files "*.js, *.html, *.css"'
 alias ytdla='youtube-dl --extract-audio --audio-format mp3'
 
 # npm
+alias s='npm start'
 alias npmi='npm install'
 alias npmr='npm remove'
 alias npmins='npm i --no-save'
@@ -39,6 +40,3 @@ alias npmu='npm update'
 alias npmug='npm update --global'
 alias npmlsg='npm list --global --depth=0'
 alias npmog='npm outdated --global --depth=0'
-
-# other
-alias is='ionic serve'
