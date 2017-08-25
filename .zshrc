@@ -27,3 +27,4 @@ source `brew --prefix`/etc/grc.bashrc
 
 # load other files
 source .aliases
+source .host-specific-zshrc

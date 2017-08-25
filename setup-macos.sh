@@ -20,6 +20,9 @@ source "scripts/backup-existing-files.sh"
 # create symlinks for dotfiles
 source "scripts/create-symlinks.sh"
 
+# create host–specific zshrc file
+echo "# file for host specific settings, like\nalias fucking='sudo'" >> ~/.host-specific-zshrc
+
 # change shell
 chsh -s /bin/zsh
 
