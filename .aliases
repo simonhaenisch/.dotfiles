@@ -17,6 +17,7 @@ alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
 alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
 alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
+alias dnslookup='host -t NS'
 
 # utilities
 alias gst='git status'
