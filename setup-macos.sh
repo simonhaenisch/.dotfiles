@@ -14,7 +14,7 @@ for file in bin/* scripts/*; do
 	chmod -vv +x "$file"
 done
 
-# backup existing files
+# backup existing dotfiles
 source "scripts/backup-existing-files.sh"
 
 # create symlinks for dotfiles
@@ -35,7 +35,7 @@ brew install antibody grc git node ffmpeg youtube-dl
 
 # install cask apps
 brew tap caskroom/cask
-brew cask install appcleaner bettertouchtool betterzipql caffeine dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket sabnzbd satellite-eyes skype slack sublime-text teamviewer the-unarchiver thumbsup transmit ubersicht visual-studio-code whatsapp
+brew cask install appcleaner bettertouchtool betterzipql caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket sabnzbd satellite-eyes skype slack sublime-text teamviewer the-unarchiver thumbsup transmit ubersicht visual-studio-code whatsapp
 
 # apps to manually install: Newton, Logix Pro X, Pixelmator, Graphic, iWork, Swift Note
 
@@ -49,6 +49,9 @@ brew cask cleanup
 # install global npm packages
 npm install -g now browser-sync # ionic cordova @squarespace/server
 
+# enable dark mode
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
 # save to disk (not iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
@@ -60,7 +63,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # don't open photos app when devices are plugged in
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+defaults write com.apple.ImageCapture disableHotPlug -bool true
 
 # no auto open for mounted transmit 4 drives (https://panic.com/blog/15-secrets-of-transmit/)
 defaults write com.panic.transmit OpenMountedFinderWindow -bool NO
@@ -95,17 +98,16 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
 # disable natural scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # mute all system sounds, including volume change feedback
-defaults write "com.apple.sound.beep.feedback" -int 0
-defaults write com.apple.systemsound 'com.apple.sound.beep.volume' -float 0
-defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
+defaults write NSGlobalDomain com.apple.sound.beep.feedback -int 0
+defaults write com.apple.systemsound com.apple.sound.beep.volume -float 0
+defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -int 0
 
 # enable full keyboard access for all controls (e.g. tab through dialog options)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -125,18 +127,12 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # no 
 defaults write com.apple.finder WarnOnEmptyTrash -bool false # no warning to empty trash
 chflags nohidden ~/Library # show library folder
 
-# auto-hide dock
-defaults write com.apple.dock autohide -bool true
-
-# show indicator for open apps
-defaults write com.apple.dock show-process-indicators -bool true
-
-# remove dock delay
-defaults write com.apple.dock autohide-delay -float 0
+# dock settings
+defaults write com.apple.dock autohide -bool true # auto-hide
+defaults write com.apple.dock show-process-indicators -bool true # show indicator for open apps
+defaults write com.apple.dock autohide-delay -float 0 # remove dock delay
 defaults write com.apple.dock autohide-time-modifier -float 0
-
-# make icons of hidden apps translucent
-defaults write com.apple.dock showhidden -bool true
+defaults write com.apple.dock showhidden -bool true # make icons of hidden apps translucent
 
 # kill effected apps
 killall Finder
