@@ -1,18 +1,12 @@
 # cd
 alias cdh='cd ~'
 alias cds='cd ~/Stuff'
-alias cdjb='cd ~/Work/JITBug'
-alias cdjbapi='cd ~/Work/JITBug/WebAPI/JitBugApi'
-alias cdjbweb='cd ~/Work/JITBug/WebApp/jitbug_webapp'
-alias cdjbapp='cd ~/Work/JITBug/MobileApp/JITbug'
-alias cdj='cd ~/Work/justine'
-alias cdec='cd ~/Documents/Studium/eCollege'
 
 # system
 alias e='$EDITOR' # as editor shortcut
 alias l='ls -alph' # all, long, slash after dirs, human readable
 alias mv='mv -v'
-alias rm='rm -i -v'
+alias rm='rm -v'
 alias cp='cp -v'
 alias ln='ln -v'
 alias cp_p='rsync -WavP --human-readable --progress' # copy with progress
