@@ -1,3 +1,6 @@
+[alias]
+	ignore = update-index --skip-worktree
+	unignore = update-index --no-skip-worktree
 [push]
 	default = simple
 	recurseSubmodules = on-demand
