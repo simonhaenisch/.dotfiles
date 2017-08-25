@@ -1,6 +1,5 @@
 # cd
 alias cdh='cd ~'
-alias cds='cd ~/Stuff'
 
 # system
 alias e='$EDITOR' # as editor shortcut
