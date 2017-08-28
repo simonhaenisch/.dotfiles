@@ -38,7 +38,7 @@ brew install antibody grc git node ffmpeg youtube-dl
 
 # install cask apps
 brew tap caskroom/cask
-brew cask install appcleaner bettertouchtool betterzipql caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket sabnzbd satellite-eyes skype slack sublime-text teamviewer the-unarchiver thumbsup transmit ubersicht visual-studio-code whatsapp
+brew cask install appcleaner bettertouchtool caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket sabnzbd satellite-eyes skype slack sublime-text teamviewer the-unarchiver thumbsup transmit ubersicht visual-studio-code whatsapp
 
 # apps to manually install: Newton, Logix Pro X, Pixelmator, Graphic, iWork, Swift Note
 
