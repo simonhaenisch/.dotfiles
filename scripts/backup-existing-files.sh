@@ -1,4 +1,5 @@
 mv -iv ~/.aliases ~/.aliases.bak
+mv -iv ~/.functions ~/.functions.bak
 mv -iv ~/.gitconfig ~/.gitconfig.bak
 mv -iv ~/.gitignore ~/.gitignore.bak
 mv -iv ~/.hyper.js hyper.js.bak

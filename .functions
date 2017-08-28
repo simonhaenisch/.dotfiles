@@ -1,0 +1,3 @@
+function caff() {
+	caffeinate -t $((60 * $1)) &
+}

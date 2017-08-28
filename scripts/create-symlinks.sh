@@ -1,4 +1,5 @@
 ln -vs `pwd`/.aliases ~
+ln -vs `pwd`/.functions ~
 ln -vs `pwd`/.gitconfig ~
 curl https://raw.githubusercontent.com/github/gitignore/master/Global/macOS.gitignore > ~/.gitignore
 echo "\n# other\nnode_modules/" >> ~/.gitignore
