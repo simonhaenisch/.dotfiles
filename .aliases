@@ -10,24 +10,31 @@ alias mv='mv -v'
 alias rm='rm -v'
 alias cp='cp -v'
 alias ln='ln -v'
-alias cp_p='rsync -WavP --human-readable --progress' # copy with progress
 alias cb='pbcopy' # clipboard shortcut
-alias dsstore_clean='find . -type f -name .DS_Store -ls -delete'
 alias cal='cal | grep -C6 --color -e " $(date +%e)" -e "^(date +%e)"'
+
+# utilities
+alias cp_p='rsync -WavP --human-readable --progress' # copy with progress
+alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
+alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
+alias dsstore_clean='find . -type f -name .DS_Store -ls -delete'
+alias dnslookup='host -t NS'
+alias password-gen='pw=`openssl rand -base64 12`; echo "$pw" | pbcopy; echo "$pw (copied to clipboard)"'
 alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
-alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
-alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
-alias dnslookup='host -t NS'
-alias password-gen='pw=`openssl rand -base64 12`; echo "$pw" | pbcopy; echo "$pw (copied to clipboard)"'
-
-# utilities
-alias gst='git status'
-alias gd='git diff .'
-alias gdc='git diff --cached'
 alias bs='browser-sync start --directory --server --files "*.js, *.html, *.css"'
 alias ytdla='youtube-dl --extract-audio --audio-format mp3'
+
+# git
+alias add='git add'
+alias clone='git clone'
+alias commit='git commit'
+alias pull='git pull'
+alias push='git push'
+alias gst='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
 
 # npm
 alias s='npm start'
