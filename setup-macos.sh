@@ -34,7 +34,7 @@ xcode-select --install
 
 # install brew stuff
 brew tap getantibody/homebrew-antibody
-brew install antibody grc git node ffmpeg youtube-dl
+brew install antibody grc git node openssl ffmpeg youtube-dl
 
 # install cask apps
 brew tap caskroom/cask
