@@ -1,4 +1,6 @@
 # cd
+alias -- -='cd -'
+alias ..='cd ..'
 alias cdh='cd ~'
 
 # system
