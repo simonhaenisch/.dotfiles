@@ -39,6 +39,7 @@ alias gdc='git diff --cached'
 
 # npm
 alias s='npm start'
+alias t='npm test'
 alias npmi='npm install'
 alias npmr='npm remove'
 alias npmins='npm i --no-save'
