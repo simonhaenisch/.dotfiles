@@ -19,7 +19,7 @@ alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
 alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
 alias dsstore_clean='find . -type f -name .DS_Store -ls -delete'
 alias dnslookup='host -t NS'
-alias password-gen='pw=`openssl rand -base64 12`; echo "$pw" | pbcopy; echo "$pw (copied to clipboard)"'
+alias password-gen='pw=`openssl rand -base64 12`; echo $pw | tr -d "\n" | cb; echo "$pw (copied to clipboard)"; unset pw'
 alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
