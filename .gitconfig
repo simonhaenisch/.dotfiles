@@ -1,4 +1,6 @@
 [alias]
+	stage = add
+	unstage = reset --
 	ignore = update-index --skip-worktree
 	unignore = update-index --no-skip-worktree
 [push]
