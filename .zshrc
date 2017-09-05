@@ -18,6 +18,10 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+# key bindings for history substring search
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+
 # key bindings for [fn] + arrow left/right
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
