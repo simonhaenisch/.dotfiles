@@ -25,6 +25,7 @@ alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
 alias bs='browser-sync start --directory --server --files "*.js, *.html, *.css"'
 alias ytdla='youtube-dl --extract-audio --audio-format mp3'
+alias deploy='now && now alias'
 
 # git
 alias add='git add'
