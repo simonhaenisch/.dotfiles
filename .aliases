@@ -7,8 +7,8 @@ alias cdh='cd ~'
 alias e='$EDITOR' # as editor shortcut
 alias l='ls -alph' # all, long, slash after dirs, human readable
 alias mv='mv -v'
-alias rm='rm -v'
-alias cp='cp -v'
+alias rm='rm -vr'
+alias cp='cp -vr'
 alias ln='ln -v'
 alias cb='pbcopy' # clipboard shortcut
 alias cal='cal | grep -C6 --color -e " $(date +%e)" -e "^(date +%e)"'
@@ -19,7 +19,7 @@ alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
 alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
 alias dsstore_clean='find . -type f -name .DS_Store -ls -delete'
 alias dnslookup='host -t NS'
-alias password-gen='pw=`openssl rand -base64 12`; echo $pw | tr -d "\n" | cb; echo "$pw (copied to clipboard)"; unset pw'
+alias password-gen='pw=`openssl rand -base64 12`; echo $pw | tr -d "\n" | pbcopy; echo "$pw (copied to clipboard)"; unset pw'
 alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
@@ -38,8 +38,9 @@ alias gda='git diff .'
 alias gdc='git diff --cached'
 
 # npm
-alias s='npm start'
-alias t='npm test'
+alias r='npm run -s'
+alias s='npm start -s'
+alias t='npm test -s'
 alias npmi='npm install'
 alias npmr='npm remove'
 alias npmins='npm i --no-save'
