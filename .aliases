@@ -5,7 +5,7 @@ alias cdh='cd ~'
 
 # system
 alias e='$EDITOR' # as editor shortcut
-alias l='ls -alph' # all, long, slash after dirs, human readable
+alias l='ls -alhF' # all, long, human readable, suffix for dirs/executables/symlinks
 alias mv='mv -v'
 alias rm='rm -vr'
 alias cp='cp -vr'
