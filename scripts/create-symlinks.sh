@@ -8,3 +8,4 @@ ln -vs `pwd`/.tern-config ~
 ln -vs `pwd`/.zshrc ~
 
 ln -vs `pwd`/bin/sublw /usr/local/bin/sublw
+ln -vs `pwd`/bin/codew /usr/local/bin/codew

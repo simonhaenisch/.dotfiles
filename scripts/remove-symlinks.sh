@@ -7,3 +7,4 @@ rm -v ~/.tern-config
 rm -v ~/.zshrc
 
 rm -v /usr/local/bin/sublw
+rm -v /usr/local/bin/codew
