@@ -8,6 +8,7 @@ alias e='$EDITOR' # as editor shortcut
 alias l='ls -alhF' # all, long, human readable, suffix for dirs/executables/symlinks
 alias mv='mv -v'
 alias rm='rm -vr'
+alias rmf='rm -rf'
 alias cp='cp -vr'
 alias ln='ln -v'
 alias cb='pbcopy' # clipboard shortcut
@@ -25,7 +26,7 @@ alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
 alias bs='browser-sync start --directory --server --files "*.js, *.html, *.css"'
 alias ytdla='youtube-dl --extract-audio --audio-format mp3'
-alias deploy='now && now alias'
+alias deploy='now && now alias && now rm --safe --yes `basename $(pwd)`'
 
 # git
 alias add='git add'
