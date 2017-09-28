@@ -1,5 +1,5 @@
 # exports
-export EDITOR='sublw'
+export EDITOR='sublw' # or 'codew'
 export CLICOLOR=true
 export LANG='en_US.UTF-8'
 
@@ -21,7 +21,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-# key bindings for history substring search
+# key bindings for history substring search (arrow up/down)
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
@@ -29,8 +29,8 @@ bindkey "^[[B" history-substring-search-down
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
-# apply grc
-source `brew --prefix`/etc/grc.bashrc
+# sourc grc (for nice colors)
+source `brew --prefix`/etc/grc.zsh
 
 # load other files
 source ~/.aliases
