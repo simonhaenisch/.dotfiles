@@ -1,20 +1,21 @@
 function c() {
-	cd $1 && l
+	cd "$1" && l
 }
 
 function mkd() {
-	mkdir -p $1 && cd $1
+	mkdir -p "$1" && cd "$1"
 }
 
 function gclone() {
-	git clone https://github.com/$1 && cd `basename $1` && echo "\n$(pwd)" && l
+	git clone https://github.com/"$1" && cd `basename "$1"` && echo "\n$(pwd)" && l
 }
 
 function caff() {
 	caffeinate -t $((60 * $1)) &
+	"caffeinated for $1 minute(s)"
 }
 
 function extractAttachment() {
 	# e. g. extractAttachment mail.eml attachment.pdf
-	perl -MMIME::Base64 -ne 'print decode_base64($_)' < $1 > $2
+	perl -MMIME::Base64 -ne 'print decode_base64($_)' < "$1" > "$2"
 }
