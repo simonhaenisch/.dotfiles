@@ -32,6 +32,14 @@ module.exports = {
 		bell: 'SOUND',
 
 		copyOnSelect: true,
+
+		overlay: {
+			animate: false,
+			size: 1.0,
+			startAlone: true,
+			unique: true,
+			tray: false, // enable with [alt] + [space]
+		}
 	},
 
 	plugins: [
@@ -39,6 +47,8 @@ module.exports = {
 		'hyperlinks',
 		'hyperterm-alternatescroll',
 		'hyper-sierra-vibrancy',
+		'hyper-statusline',
+		// 'hyperterm-overlay',
 	],
 
 	localPlugins: [],
