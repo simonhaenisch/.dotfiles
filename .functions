@@ -12,7 +12,7 @@ function gclone() {
 
 function caff() {
 	caffeinate -t $((60 * $1)) &
-	"caffeinated for $1 minute(s)"
+	echo "caffeinated for $1 minute(s)"
 }
 
 function extractAttachment() {
