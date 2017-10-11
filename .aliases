@@ -41,10 +41,12 @@ alias gd='git diff'
 alias gda='git diff .'
 alias gdc='git diff --cached'
 
-# npm
+# npm scripts
 alias r='npm run -s'
 alias s='npm start -s'
 alias t='npm test -s'
+
+# npm package management
 alias npmi='npm install'
 alias npmr='npm remove'
 alias npmins='npm i --no-save'
@@ -55,5 +57,7 @@ alias npmid='npm i --save-dev'
 alias npmrd='npm r --save-dev'
 alias npmu='npm update'
 alias npmug='npm update --global'
+alias npmls='npm list --depth=0'
 alias npmlsg='npm list --global --depth=0'
+alias npmo='npm outdated'
 alias npmog='npm outdated --global --depth=0'
