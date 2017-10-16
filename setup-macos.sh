@@ -38,7 +38,9 @@ brew install antibody grc git node openssl ffmpeg youtube-dl
 
 # install cask apps
 brew tap caskroom/cask
-brew cask install appcleaner bettertouchtool caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket sabnzbd satellite-eyes skype slack sublime-text teamviewer the-unarchiver thumbsup transmit ubersicht visual-studio-code whatsapp
+brew cask install appcleaner bettertouchtool caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket skype slack sublime-text teamviewer the-unarchiver thumbsup transmit ubersicht virtualbox visual-studio-code whatsapp
+
+# for work: android-sdk dotnet-sdk postman
 
 # apps to manually install: Newton, Logix Pro X, Pixelmator, Graphic, iWork, Swift Note
 
@@ -50,7 +52,7 @@ brew cask cleanup
 (EDITOR=tee && (crontab -l ; echo "0 11 * * 6 `pwd`/scripts/weekly-update.sh" ) | uniq - | crontab -e)
 
 # install global npm packages
-npm install -g now browser-sync # ionic cordova @squarespace/server
+npm install -g now browser-sync prettier cost-of-modules # @squarespace/server
 
 # enable dark mode
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
