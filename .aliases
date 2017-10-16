@@ -13,9 +13,10 @@ alias rmf='/bin/rm -rf' # non-verbose
 alias cp='cp -vr'
 alias ln='ln -v'
 alias cb='pbcopy' # clipboard shortcut
-alias cal='cal | grep -C6 --color -e " $(date +%e)" -e "^(date +%e)"'
 
 # utilities
+alias lsps='grc ps -a -r -f -o %cpu,user | grep -v grep | grep'
+alias cal='cal | grep -C6 --color -e " $(date +%e)" -e "^(date +%e)"'
 alias cp_p='rsync -WavP --human-readable --progress' # copy with progress
 alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
 alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
@@ -59,5 +60,5 @@ alias npmu='npm update'
 alias npmug='npm update --global'
 alias npmls='npm list --depth=0'
 alias npmlsg='npm list --global --depth=0'
-alias npmo='npm outdated'
+alias npmo='npm outdated -l'
 alias npmog='npm outdated --global --depth=0'
