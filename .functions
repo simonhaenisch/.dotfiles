@@ -26,7 +26,7 @@ function rewriteGitAuthor() {
 	# $1: old email
 	# $2: new name
 	# $3: new email
-	echo git filter-branch --env-filter "
+	git filter-branch --env-filter "
 	OLD_EMAIL=\"$1\"
 	CORRECT_NAME=\"$2\"
 	CORRECT_EMAIL=\"$3\"
