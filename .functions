@@ -43,5 +43,5 @@ function rewriteGitAuthor() {
 	" --tag-name-filter cat -- --branches --tags
 
 	echo now push the corrected repository:
-	echo \t\tgit push --force --tags origin 'refs/heads/*'
+	echo "\t\tgit push --force --tags origin 'refs/heads/*'"
 }
