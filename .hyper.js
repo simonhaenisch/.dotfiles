@@ -25,6 +25,8 @@ module.exports = {
 			lightWhite: '#ffffff',
 		},
 
+		backgroundColor: 'rgba(40, 40, 40, 0.68)',
+
 		shellArgs: ['--login'],
 
 		env: {},
@@ -39,16 +41,16 @@ module.exports = {
 			startAlone: true,
 			unique: true,
 			tray: false, // enable with [alt] + [space]
-		}
+		},
 	},
 
 	plugins: [
 		'hyper-blink',
 		'hyperlinks',
 		'hyperterm-alternatescroll',
-		'hyper-sierra-vibrancy',
+		// 'hyper-sierra-vibrancy',
 		'hyper-statusline',
-		// 'hyperterm-overlay',
+		'hyperterm-overlay',
 	],
 
 	localPlugins: [],
