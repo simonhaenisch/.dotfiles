@@ -1,16 +1,37 @@
 #!/bin/bash
 
-# inspired by https://mths.be/macos
+# inspired by https://mths.be/macos and others
 
-# close system prefs to prevent them from overwriding anything
-osascript -e 'tell application "System Preferences" to quit'
+# change shell
+chsh -s /bin/zsh
 
-# ask for sudo password up front and keep alive till script finishes
-sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# install homebrew (http://brew.sh)
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install brew packages
+brew tap getantibody/homebrew-antibody
+for package in antibody grc git node openssl rsync ffmpeg youtube-dl
+do
+	brew install "$package"
+done
+
+# install casks
+brew tap caskroom/cask
+brew tap caskroom/versions
+for cask in appcleaner bettertouchtool caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket skype slack sublime-text teamviewer the-unarchiver thumbsup transmit4 ubersicht visual-studio-code whatsapp
+do
+	brew cask install "$cask"
+done
+
+# optional casks: android-sdk dotnet-sdk postman virtualbox
+
+# cleanup cache for brew and cask downloads
+brew cleanup -s
+brew cask cleanup
 
 # make files in bin and scripts folders exectuable
-for file in bin/* scripts/*; do
+for file in bin/* scripts/*
+do
 	chmod -vv +x "$file"
 done
 
@@ -22,31 +43,6 @@ source "scripts/create-symlinks.sh"
 
 # create host–specific zshrc file
 echo "# file for host specific settings, like\nalias fucking='sudo'" >> ~/.host-specific-zshrc
-
-# change shell
-chsh -s /bin/zsh
-
-# install xcode command line tools
-xcode-select --install
-
-# install homebrew (http://brew.sh)
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# install brew stuff
-brew tap getantibody/homebrew-antibody
-brew install antibody grc git node openssl ffmpeg youtube-dl
-
-# install cask apps
-brew tap caskroom/cask
-brew cask install appcleaner bettertouchtool caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket skype slack sublime-text teamviewer the-unarchiver thumbsup transmit ubersicht virtualbox visual-studio-code whatsapp
-
-# for work: android-sdk dotnet-sdk postman
-
-# apps to manually install: Newton, Logix Pro X, Pixelmator, Graphic, iWork, Swift Note
-
-# cleanup cache for brew and cask downloads
-brew cleanup -s
-brew cask cleanup
 
 # install weekly update script as cron job
 (EDITOR=tee && (crontab -l ; echo "0 11 * * 6 `pwd`/scripts/weekly-update.sh" ) | uniq - | crontab -e)
@@ -89,9 +85,6 @@ sudo nvram SystemAudioVolume=" "
 # disable sudden motion sensor (not needed for SSDs)
 sudo pmset -a sms 0
 
-# disable local time machine backups
-sudo tmutil disablelocal
-
 # don't offer new disks for time machine backup
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
@@ -130,7 +123,6 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true # list folders fi
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf" # search current folder by default
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # no warning for changing extension
 defaults write com.apple.finder WarnOnEmptyTrash -bool false # no warning to empty trash
-chflags nohidden ~/Library # show library folder
 
 # dock settings
 defaults write com.apple.dock autohide -bool true # auto-hide
