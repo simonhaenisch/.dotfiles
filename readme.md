@@ -14,12 +14,14 @@
 ## Config/Check List
 
 1. Set Finder settings and view options in home folder (use as defaults)
-2. Open Photos: use iCloud library, wait for photos to download
-3. System Preferences > iCloud: disable optimizing storage for drive
-4. Set up Uebersicht widgets: `gclone simonhaenisch/uebersicht-widgets`
-5. Start f.lux: set location
-6. Configure the Unarchiver: select all formats, extract to same folder, move to trash
-7. Set up Dropbox
+2. Battery: show percentage
+3. Date & Time Preferences > Clock: show date
+4. Open Photos: use iCloud library, wait for photos to download
+5. System Preferences > iCloud: disable optimizing storage for drive
+6. Set up Uebersicht widgets: `gclone simonhaenisch/uebersicht-widgets`
+7. Start f.lux: set location
+8. Configure the Unarchiver: select all formats, extract to same folder, move to trash
+9. Set up Dropbox
 
 ## Apps to manually install
 
