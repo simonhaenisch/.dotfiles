@@ -1,10 +1,11 @@
 module.exports = {
 	config: {
+
 		fontSize: 13,
 		fontFamily: '"Source Code Pro", monospace',
+		
 		cursorShape: 'UNDERLINE',
-
-		padding: '12px 14px',
+		cursorBlink: true,
 
 		colors: {
 			black: '#282828',
@@ -25,13 +26,9 @@ module.exports = {
 			lightWhite: '#ffffff',
 		},
 
-		backgroundColor: 'rgba(40, 40, 40, 0.68)',
+		backgroundColor: 'rgba(0, 0, 0, 0.5)',
 
-		shellArgs: ['--login'],
-
-		env: {},
-
-		bell: 'SOUND',
+		bell: false,
 
 		copyOnSelect: true,
 
@@ -39,18 +36,18 @@ module.exports = {
 			animate: false,
 			size: 1.0,
 			startAlone: true,
-			unique: true,
-			tray: false, // enable with [alt] + [space]
+			startup: false,
+			unique: false,
+			hideOnBlur: true,
+			tray: false, // enable with [option] + [space]
 		},
 	},
 
 	plugins: [
-		'hyper-blink',
-		'hyperlinks',
-		'hyperterm-alternatescroll',
-		// 'hyper-sierra-vibrancy',
-		'hyper-statusline',
 		'hyperterm-overlay',
+		'hyper-statusline',
+		'hyperterm-alternatescroll',
+		'hyperlinks',
 	],
 
 	localPlugins: [],
