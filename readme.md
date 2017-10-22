@@ -22,6 +22,7 @@
 7. Start f.lux: set location
 8. Configure the Unarchiver: select all formats, extract to same folder, move to trash
 9. Set up Dropbox
+10. `now login`
 
 ## Apps to manually install
 
