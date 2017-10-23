@@ -25,15 +25,12 @@ done
 
 # optional casks: android-sdk dotnet-sdk postman virtualbox
 
+# install global npm packages
+npm install -g now browser-sync prettier cost-of-modules @squarespace/server
+
 # cleanup cache for brew and cask downloads
 brew cleanup -s
 brew cask cleanup
-
-# make files in bin and scripts folders exectuable
-for file in bin/* scripts/*
-do
-	chmod -vv +x "$file"
-done
 
 # backup existing dotfiles
 source "scripts/backup-existing-files.sh"
@@ -46,9 +43,6 @@ echo "# file for host specific settings, like\nalias fucking='sudo'" >> ~/.host-
 
 # install weekly update script as cron job
 (EDITOR=tee && (crontab -l ; echo "0 11 * * 6 `pwd`/scripts/weekly-update.sh" ) | uniq - | crontab -e)
-
-# install global npm packages
-npm install -g now browser-sync prettier cost-of-modules # @squarespace/server
 
 # enable dark mode
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
@@ -78,9 +72,6 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 
 # enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
-
-# disable sound effect on boot
-sudo nvram SystemAudioVolume=" "
 
 # disable sudden motion sensor (not needed for SSDs)
 sudo pmset -a sms 0
