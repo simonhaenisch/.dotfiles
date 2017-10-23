@@ -49,7 +49,7 @@ module.exports = {
 
 	plugins: [
 		'hyperlinks',
-		'hyperterm-alternatescroll',
+		// 'hyperterm-alternatescroll', // crashes in canary
 		'hyper-statusline',
 		'hyperterm-overlay',
 	],
