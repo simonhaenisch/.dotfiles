@@ -15,6 +15,8 @@
 
 1. Set Finder settings and view options in home folder (use as defaults)
 2. Battery: show percentage
+3. System Preferences > Sound: disable UI sounds, show in menu bar
+4. System Preferences > Bluetooth: disable, show in menu bar
 3. Date & Time Preferences > Clock: show date
 4. Open Photos: use iCloud library, wait for photos to download
 5. System Preferences > iCloud: disable optimizing storage for drive
