@@ -1,9 +1,10 @@
 module.exports = {
 	config: {
+		updateChannel: 'canary',
 
-		fontSize: 13,
+		// fontSize: 13,
 		fontFamily: '"Source Code Pro", monospace',
-		
+
 		cursorShape: 'UNDERLINE',
 		cursorBlink: true,
 
@@ -28,6 +29,9 @@ module.exports = {
 
 		backgroundColor: 'rgba(0, 0, 0, 0.5)',
 
+		css: '',
+		termCSS: '',
+
 		bell: false,
 
 		copyOnSelect: true,
@@ -44,10 +48,10 @@ module.exports = {
 	},
 
 	plugins: [
-		'hyperterm-overlay',
-		'hyper-statusline',
-		'hyperterm-alternatescroll',
 		'hyperlinks',
+		'hyperterm-alternatescroll',
+		'hyper-statusline',
+		'hyperterm-overlay',
 	],
 
 	localPlugins: [],
