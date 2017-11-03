@@ -43,7 +43,8 @@ module.exports = {
 			startup: false,
 			unique: false,
 			hideOnBlur: true,
-			tray: false, // enable with [option] + [space]
+			tray: false,
+			hotkeys: ['Alt+Space'],
 		},
 	},
 
