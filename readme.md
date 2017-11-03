@@ -13,18 +13,19 @@
 
 ## Config/Check List
 
-1. Set Finder settings and view options in home folder (use as defaults)
-2. Battery: show percentage
-3. System Preferences > Sound: disable UI sounds, show in menu bar
-4. System Preferences > Bluetooth: disable, show in menu bar
-3. Date & Time Preferences > Clock: show date
-4. Open Photos: use iCloud library, wait for photos to download
-5. System Preferences > iCloud: disable optimizing storage for drive
-6. Set up Uebersicht widgets: `gclone simonhaenisch/uebersicht-widgets`
-7. Start f.lux: set location
-8. Configure the Unarchiver: select all formats, extract to same folder, move to trash
-9. Set up Dropbox
-10. `now login`
+* Set Finder settings and view options in home folder (use as defaults)
+* Battery: show percentage
+* System Preferences > Sound: disable UI sounds, show in menu bar
+* System Preferences > Bluetooth: disable, show in menu bar
+* System Preferences > Dock: always prefer tabs
+* Date & Time Preferences > Clock: show date
+* Open Photos: use iCloud library, wait for photos to download
+* System Preferences > iCloud: disable optimizing storage for drive
+* Set up Uebersicht widgets: `gclone simonhaenisch/uebersicht-widgets`
+* Start f.lux: set location
+* Configure the Unarchiver: select all formats, extract to same folder, move * trash
+* Set up Dropbox
+* `now login`
 
 ## Apps to manually install
 
