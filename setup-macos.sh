@@ -23,7 +23,7 @@ do
 	brew cask install "$cask"
 done
 
-# optional casks: android-sdk dotnet-sdk postman virtualbox
+# optional casks: java8 android-sdk dotnet-sdk postman virtualbox
 
 # install global npm packages
 npm install -g now browser-sync prettier cost-of-modules @squarespace/server
@@ -39,10 +39,10 @@ source "scripts/backup-existing-files.sh"
 source "scripts/create-symlinks.sh"
 
 # create host–specific zshrc file
-echo "# file for host specific settings, like\nalias fucking='sudo'" >> ~/.host-specific-zshrc
+printf "alias update='`pwd`/scripts/update.sh'" >> ~/.host-specific-zshrc
 
-# install weekly update script as cron job
-(EDITOR=tee && (crontab -l ; echo "0 11 * * 6 `pwd`/scripts/weekly-update.sh" ) | uniq - | crontab -e)
+# install update script as weekly cron job
+# (EDITOR=tee && (crontab -l ; printf "0 11 * * 6 `pwd`/scripts/update.sh" ) | uniq - | crontab -e)
 
 # enable dark mode
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
