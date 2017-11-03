@@ -48,6 +48,7 @@ alias t='npm test -s'
 
 # npm package management
 alias npmi='npm install'
+alias npmie='npm install --save-exact'
 alias npmr='npm remove'
 alias npmins='npm i --no-save'
 alias npmrns='npm r --no-save'
