@@ -19,9 +19,10 @@ alias lsps='grc ps -a -r -f -o %cpu,user | grep -v grep | grep'
 alias cp_p='rsync -WavP --human-readable --progress' # copy with progress
 alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
 alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
+alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 alias dsstore_clean='find . -type f -name .DS_Store -ls -delete'
 alias dnslookup='host -t NS'
-alias password-gen='pw=`openssl rand -base64 12`; echo $pw | tr -d "\n" | pbcopy; echo "$pw (copied to clipboard)"; unset pw'
+alias password-gen='pw=`openssl rand -base64 12`; printf "$pw" | pbcopy; printf "$pw (copied to clipboard)"; unset pw'
 alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
