@@ -19,6 +19,7 @@
 * System Preferences > Bluetooth: disable, show in menu bar
 * System Preferences > Dock: always prefer tabs
 * Date & Time Preferences > Clock: show date
+* Notes: sort by time created
 * Open Photos: use iCloud library, wait for photos to download
 * System Preferences > iCloud: disable optimizing storage for drive
 * Set up Uebersicht widgets: `gclone simonhaenisch/uebersicht-widgets`
