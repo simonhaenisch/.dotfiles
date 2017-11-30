@@ -13,7 +13,8 @@ function gclone() {
 function npmil() {
 	for package in "$@"
 	do
-		npm install "$package@latest"
+		echo "installing latest version of $package..."
+		npm install --save-exact "$package@latest"
 	done
 }
 
