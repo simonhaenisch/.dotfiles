@@ -18,6 +18,14 @@ function npmil() {
 	done
 }
 
+function npmidl() {
+	for package in "$@"
+	do
+		echo "installing latest version of $package..."
+		npm install --save-exact --save-dev "$package@latest"
+	done
+}
+
 function extractAttachment() {
 	# e. g. extractAttachment mail.eml attachment.pdf
 	perl -MMIME::Base64 -ne 'print decode_base64($_)' < "$1" > "$2"
