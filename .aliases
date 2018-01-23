@@ -23,6 +23,7 @@ alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 alias dsstore_clean='find . -type f -name .DS_Store -ls -delete'
 alias dnslookup='host -t NS'
 alias password-gen='pw=`openssl rand -base64 12`; printf "$pw" | pbcopy; printf "$pw (copied to clipboard)"; unset pw'
+alias id_rsa='cat ~/.ssh/id_rsa.pub | pbcopy; printf "public key copied to clipboard"'
 alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
