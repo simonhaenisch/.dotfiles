@@ -18,12 +18,10 @@ done
 # install casks
 brew tap caskroom/cask
 brew tap caskroom/versions
-for cask in appcleaner bettertouchtool caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome hyper imageoptim iterm2 mplayerx owncloud qlcolorcode qlimagesize qlmarkdown qlstephen rocket skype slack sublime-text the-unarchiver thumbsup transmit4 ubersicht visual-studio-code whatsapp
+for cask in appcleaner bettertouchtool caffeine caskroom/fonts/font-source-code-pro dropbox firefox flux google-chrome google-drive-file-stream hyper imageoptim iterm2 macpass mpv qlcolorcode qlimagesize qlmarkdown qlstephen rocket skype slack sublime-text the-unarchiver thumbsup transmit4 ubersicht visual-studio-code whatsapp
 do
 	brew cask install "$cask"
 done
-
-# optional casks: java8 android-sdk dotnet-sdk postman virtualbox
 
 # install global npm packages
 npm install -g now browser-sync prettier cost-of-modules @squarespace/server
