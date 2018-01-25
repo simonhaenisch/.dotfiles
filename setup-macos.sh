@@ -24,7 +24,7 @@ do
 done
 
 # install global npm packages
-npm install -g now browser-sync prettier cost-of-modules @squarespace/server
+npm install -g browser-sync cost-of-modules now prettier @squarespace/server tldr
 
 # cleanup cache for brew and cask downloads
 brew cleanup -s
