@@ -3,10 +3,10 @@
 ## Installation on fresh macOS
 
 1. Open Terminal
-2. `git clone https://github.com/simonhaenisch/.dotfiles` will ask to install XCode Developer Tools
-3. Repeat the `git clone` command
-4. `cd .dotfiles`
-5. `chmod +x setup-macos.sh`
+2. Add ssh public key to Github account
+3. `git clone git@github.com/simonhaenisch/.dotfiles` will ask to install XCode Developer Tools
+4. Repeat the `git clone` command
+5. `cd .dotfiles`
 6. `./setup-macos.sh`
 7. Check output for any failed brew/cask installs
 8. Reboot
@@ -24,7 +24,7 @@
 * System Preferences > iCloud: disable optimizing storage for drive
 * Set up Uebersicht widgets: `gclone simonhaenisch/uebersicht-widgets`
 * Start f.lux: set location
-* Configure the Unarchiver: select all formats, extract to same folder, move * trash
+* Configure the Unarchiver: select all formats, extract to same folder, move to trash afterwards
 * Set up Dropbox
 * `now login`
 
