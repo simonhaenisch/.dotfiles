@@ -39,6 +39,17 @@ source "scripts/create-symlinks.sh"
 # create host–specific zshrc file
 printf "alias update='`pwd`/scripts/update.sh'" >> ~/.host-specific-zshrc
 
+# create projects folder and clone some repos
+function gc2projects () {
+	for repo in "$@"
+	do
+		git clone "git@github.com:$repo" "~/Projects/$(basename $repo)"
+	done
+}
+
+mkdir ~/Projects
+gc2projects ~/Projects/md-to-pdf ~/Projects/simonhaenisch.com ~/Projects/uebersicht-widgets
+
 # install update script as weekly cron job
 # (EDITOR=tee && (crontab -l ; printf "0 11 * * 6 `pwd`/scripts/update.sh" ) | uniq - | crontab -e)
 
