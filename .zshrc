@@ -29,10 +29,13 @@ bindkey "^[[B" history-substring-search-down
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
-# sourc grc (for nice colors)
+# source grc (for nice colors)
 source `brew --prefix`/etc/grc.zsh
 
-# load other files
+# source npm completions (also completes scripts)
+source <(npm completion)
+
+# source other files
 source ~/.aliases
 source ~/.functions
 source ~/.host-specific-zshrc
