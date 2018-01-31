@@ -26,6 +26,15 @@ function npmidl() {
 	done
 }
 
+function npmcl() {
+	url=`npm view "$1" repository.url | grep github`
+	if [ -n "$url" ]
+	then
+		[[ $url =~ 'github.com/(.+)/(.+).git' ]] && user=$match[1] && repo=$match[2]
+		curl "https://raw.githubusercontent.com/$user/$repo/master/CHANGELOG.md" | less
+	fi
+}
+
 function extractAttachment() {
 	# e. g. extractAttachment mail.eml attachment.pdf
 	perl -MMIME::Base64 -ne 'print decode_base64($_)' < "$1" > "$2"
