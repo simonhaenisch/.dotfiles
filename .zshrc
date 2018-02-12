@@ -1,5 +1,5 @@
 # exports
-export EDITOR='sublw' # or 'codew'
+export EDITOR=nano # other options: 'sublw', 'codew'
 export CLICOLOR=true
 export LANG='en_US.UTF-8'
 
@@ -13,7 +13,7 @@ antibody bundle sindresorhus/pure
 # customize prompt (see https://wiki.archlinux.org/index.php/zsh#Customized_prompt)
 PROMPT='%(?.%F{green}.%F{red}❯%F{green})❯%f '
 
-# set tab width to 2
+# set tab width
 tabs -2
 
 # history
