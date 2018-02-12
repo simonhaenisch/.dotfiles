@@ -34,6 +34,7 @@ alias wttr='curl -s "wttr.in" | grep -v "^\w"'
 alias prettify_json='node -e "console.log(JSON.stringify(JSON.parse(process.argv[1]), null, 2))"'
 
 # git
+alias git=hub
 alias add='git add'
 alias clone='git clone'
 alias commit='git commit'
