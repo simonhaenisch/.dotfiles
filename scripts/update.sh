@@ -4,5 +4,5 @@
 /usr/local/bin/brew cask cleanup
 
 # npm and global packages
-/usr/local/bin/npm update -g npm
+/usr/local/bin/npm update -g npm@latest
 /usr/local/bin/npm update -g
