@@ -1,5 +1,7 @@
 # .dotfiles
 
+![Screenshot of ZSH Config](screenshot.png)
+
 ## Installation on fresh macOS
 
 1. Open Terminal
