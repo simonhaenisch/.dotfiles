@@ -1,59 +1,44 @@
+// see https://hyper.is#cfg
+
 module.exports = {
 	config: {
-		updateChannel: 'canary',
+		fontSize: 13,
+		fontFamily: '"Source Code Pro", Menlo, monospace',
 
-		// fontSize: 13,
-		fontFamily: '"Source Code Pro", monospace',
-
+		cursorColor: 'tomato',
 		cursorShape: 'UNDERLINE',
 		cursorBlink: true,
 
+		foregroundColor: 'whitesmoke',
+		backgroundColor: '#252120',
+		selectionColor: 'rgba(245, 245, 245, 0.3)', // transparent smokewhite
+		borderColor: 'tomato',
 		colors: {
-			black: '#282828',
-			red: '#f92672',
-			green: '#a6e22e',
-			yellow: '#fd971f',
-			blue: '#ae81ff',
-			magenta: '#66d9ef',
-			cyan: '#38ccd1',
-			white: '#ffffff',
-			lightBlack: '#49483e',
-			lightRed: '#f92672',
-			lightGreen: '#a6e22e',
-			lightYellow: '#fd971f',
-			lightBlue: '#ae81ff',
-			lightMagenta: '#66d9ef',
-			lightCyan: '#38ccd1',
-			lightWhite: '#ffffff',
+			black: 'black',
+			red: 'tomato',
+			green: 'mediumseagreen',
+			yellow: 'gold',
+			blue: 'steelblue',
+			magenta: 'mediumvioletred',
+			cyan: 'mediumturquoise',
+			white: 'whitesmoke',
+			lightBlack: 'dimgray',
+			lightRed: 'salmon',
+			lightGreen: 'mediumspringgreen',
+			lightYellow: 'khaki',
+			lightBlue: 'lightskyblue',
+			lightMagenta: 'hotpink',
+			lightCyan: 'cyan',
+			lightWhite: 'white',
 		},
 
-		backgroundColor: 'rgba(0, 0, 0, 0.5)',
-
-		css: '',
-		termCSS: '',
+		env: {},
 
 		bell: false,
-
 		copyOnSelect: true,
-
-		overlay: {
-			animate: false,
-			size: 1.0,
-			startAlone: true,
-			startup: false,
-			unique: false,
-			hideOnBlur: true,
-			tray: false,
-			hotkeys: ['Alt+Space'],
-		},
 	},
 
-	plugins: [
-		'hyperlinks',
-		// 'hyperterm-alternatescroll', // crashes in canary
-		'hyper-statusline',
-		'hyperterm-overlay',
-	],
-
+	plugins: [],
 	localPlugins: [],
+	keymaps: {},
 };
