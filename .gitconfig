@@ -3,6 +3,7 @@
 	unstage = reset --
 	ignore = update-index --skip-worktree
 	unignore = update-index --no-skip-worktree
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
 	default = simple
 	recurseSubmodules = on-demand
