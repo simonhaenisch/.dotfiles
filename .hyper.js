@@ -2,7 +2,7 @@
 
 module.exports = {
 	config: {
-		fontSize: 13,
+		fontSize: 11,
 		fontFamily: '"Source Code Pro", Menlo, monospace',
 
 		cursorColor: 'tomato',
@@ -38,7 +38,9 @@ module.exports = {
 		copyOnSelect: true,
 	},
 
-	plugins: [],
+	plugins: [
+		"hyper-always-on-top",
+	],
 	localPlugins: [],
 	keymaps: {},
 };
