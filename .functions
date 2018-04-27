@@ -7,14 +7,14 @@ function mkd() {
 }
 
 function publish() {
-	if [[ "$1" != "patch" && "$1" != "minor" && "$1" != "major" ]]
-	then
-		echo error: first argument must be either \'patch\', \'minor\' or \'major\'
-	else
-		npm version "$1" # patch, minor or major
+	PS3="Please select version type: "
+	select type in "patch" "minor" "major"
+	do
+		echo npm version "$type"
 		npm publish
 		git push --follow-tags
-	fi
+		break
+	done
 }
 
 function npmil() {
