@@ -6,6 +6,17 @@ function mkd() {
 	mkdir -p "$1" && cd "$1"
 }
 
+function publish() {
+	if [[ "$1" != "patch" && "$1" != "minor" && "$1" != "major" ]]
+	then
+		echo error: first argument must be either \'patch\', \'minor\' or \'major\'
+	else
+		npm version "$1" # patch, minor or major
+		npm publish
+		git push --follow-tags
+	fi
+}
+
 function npmil() {
 	for package in "$@"
 	do
