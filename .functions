@@ -75,13 +75,29 @@ function rewriteGitAuthor() {
 
 function printcolors() {
 	echo
-	echo -e "\033[0mNC (No color)"
-	echo -e "\033[1;37mWHITE   \033[0;30mBLACK"
-	echo -e "\033[0;34mBLUE    \033[1;34mLIGHT_BLUE"
-	echo -e "\033[0;32mGREEN   \033[1;32mLIGHT_GREEN"
-	echo -e "\033[0;36mCYAN    \033[1;36mLIGHT_CYAN"
-	echo -e "\033[0;31mRED     \033[1;31mLIGHT_RED"
-	echo -e "\033[0;35mPURPLE  \033[1;35mLIGHT_PURPLE"
-	echo -e "\033[0;33mYELLOW  \033[1;33mLIGHT_YELLOW"
-	echo -e "\033[1;30mGRAY    \033[0;37mLIGHT_GRAY"
+	echo "\033[0mNC (No color)"
+	echo "\033[1;37mWHITE   \033[0;30mBLACK"
+	echo "\033[0;34mBLUE    \033[1;34mLIGHT_BLUE"
+	echo "\033[0;32mGREEN   \033[1;32mLIGHT_GREEN"
+	echo "\033[0;36mCYAN    \033[1;36mLIGHT_CYAN"
+	echo "\033[0;31mRED     \033[1;31mLIGHT_RED"
+	echo "\033[0;35mPURPLE  \033[1;35mLIGHT_PURPLE"
+	echo "\033[0;33mYELLOW  \033[1;33mLIGHT_YELLOW"
+	echo "\033[1;30mGRAY    \033[0;37mLIGHT_GRAY"
+}
+
+function colortest() {
+	icon="▲" # some alternatives: ∷, •, ⁃, ≡, ‹›, ⊙, ⋯, ⋮, ─, ▪, ◼, ★, ♦
+
+	echo
+	for fg in 0m 30m 31m 32m 33m 34m 35m 36m 37m
+	do
+		echo -n " \033[$fg $icon "
+		for bg in 40m 41m 42m 43m 44m 45m 46m 47m
+		do
+			echo -n "\033[$fg\033[$bg $icon \033[0m"
+		done
+		echo
+	done
+	echo
 }
