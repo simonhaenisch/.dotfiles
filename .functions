@@ -7,12 +7,12 @@ function mkd() {
 }
 
 function publish() {
-	PS3="Please select version type: "
+	PS3="Please select release type: "
 	select type in "patch" "minor" "major"
 	do
-		echo npm version "$type"
-		npm publish
-		git push --follow-tags
+		if [[ $type ]]; then
+			npm version $type && npm publish && git push --follow-tags
+		fi
 		break
 	done
 }
