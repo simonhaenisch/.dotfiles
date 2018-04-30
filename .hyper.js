@@ -14,7 +14,7 @@ module.exports = {
 		copyOnSelect: true,
 	},
 
-	plugins: ['hyper-named-css-colors', 'hyper-always-on-top'],
+	plugins: ['hyper-named-css-colors', 'hyper-always-on-top', 'hyper-fading-scrollbar'],
 	localPlugins: [],
 	keymaps: {},
 };
