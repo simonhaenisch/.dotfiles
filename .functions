@@ -11,7 +11,7 @@ function publish() {
 	select type in "patch" "minor" "major"
 	do
 		if [[ $type ]]; then
-			npm version $type && npm publish && git push --follow-tags
+			npm version $type && git push --follow-tags && npm publish
 		fi
 		break
 	done
