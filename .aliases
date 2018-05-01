@@ -28,7 +28,7 @@ alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
 alias bs='browser-sync start --directory --server --files "*.js, *.html, *.css"'
-alias ytdla='youtube-dl --extract-audio --audio-format mp3'
+alias ytdla='youtube-dl --extract-audio --audio-format mp3 --output "~/Downloads/%(id)s.%(ext)s"'
 alias deploy='now && now alias && now rm --safe --yes `basename $(pwd)`' # be aware of folder name
 alias wttr='curl -s "wttr.in" | grep -v "^\w"'
 alias json_prettify='node -e "console.log(JSON.stringify(JSON.parse(process.argv[1]), null, 2))"'
