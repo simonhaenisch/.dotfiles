@@ -35,6 +35,8 @@ alias wttr='curl -s "wttr.in" | grep -v "^\w"'
 alias json_prettify='node -e "console.log(JSON.stringify(JSON.parse(process.argv[1]), null, 2))"'
 alias date_now='node -e "console.log(Date.now())"'
 alias com='npx cost-of-modules --no-install'
+alias loc_js='npx node-sloc . -x node_modules -d -e js'
+alias loc_css='npx node-sloc . -x node_modules -d -e css'
 
 # git
 alias git=hub
