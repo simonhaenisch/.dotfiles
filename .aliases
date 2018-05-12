@@ -16,14 +16,14 @@ alias cb='pbcopy' # clipboard shortcut
 
 # utilities
 alias lsps='grc ps -a -r -f -o %cpu,user | grep -v grep | grep'
-alias cp_p='rsync -WavP --human-readable --progress' # copy with progress
+alias cp-p='rsync -WavP --human-readable --progress' # copy with progress
 alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
 alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-alias dsstore_clean='find . -type f -name .DS_Store -ls -delete'
+alias dsstore-clean='find . -type f -name .DS_Store -ls -delete'
 alias nslookup='host -t NS'
-alias password_gen='pw=`openssl rand -base64 12`; printf "$pw" | pbcopy; printf "$pw (copied to clipboard)"; unset pw'
-alias public_key='cat ~/.ssh/id_rsa.pub | pbcopy; printf "public key copied to clipboard"'
+alias password-gen='pw=`openssl rand -base64 12`; printf "$pw" | pbcopy; printf "$pw (copied to clipboard)"; unset pw'
+alias public-key='cat ~/.ssh/id_rsa.pub | pbcopy; printf "public key copied to clipboard"'
 alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
@@ -32,11 +32,12 @@ alias ytdl='youtube-dl --format "best[ext=mp4]" --output "~/Downloads/%(id)s.%(e
 alias ytdla='youtube-dl --extract-audio --audio-format mp3 --output "~/Downloads/%(id)s.%(ext)s"'
 alias deploy='now && now alias && now rm --safe --yes `basename $(pwd)`' # be aware of folder name
 alias wttr='curl -s "wttr.in" | grep -v "^\w"'
-alias json_prettify='node -e "console.log(JSON.stringify(JSON.parse(process.argv[1]), null, 2))"'
-alias date_now='node -e "console.log(Date.now())"'
+alias json-prettify='node -e "console.log(JSON.stringify(JSON.parse(process.argv[1]), null, 2))"'
+alias date-now='node -e "console.log(Date.now())"'
 alias com='npx cost-of-modules --no-install'
-alias loc_js='npx node-sloc . -x node_modules -d -e js'
-alias loc_css='npx node-sloc . -x node_modules -d -e css'
+alias loc-js='npx node-sloc . -x node_modules -d -e js'
+alias loc-css='npx node-sloc . -x node_modules -d -e css'
+alias dev-time='npx dev-time-cli'
 
 # git
 alias git=hub
