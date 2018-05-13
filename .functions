@@ -6,17 +6,6 @@ function mkd() {
 	mkdir -p "$1" && cd "$1"
 }
 
-function publish() {
-	PS3="Please select release type: "
-	select type in "patch" "minor" "major"
-	do
-		if [[ $type ]]; then
-			npm version $type && git push --follow-tags && npm publish
-		fi
-		break
-	done
-}
-
 function npmil() {
 	for package in "$@"
 	do
