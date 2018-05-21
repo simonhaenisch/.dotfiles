@@ -27,7 +27,7 @@ alias public-key='cat ~/.ssh/id_rsa.pub | pbcopy; printf "public key copied to c
 alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
-alias bs='browser-sync start --directory --server --files "*.js, *.html, *.css"'
+alias bs='browser-sync start --server --directory --files "*.js, *.html, *.css" --no-notify'
 alias ytdl='youtube-dl --format "best[ext=mp4]" --output "~/Downloads/%(id)s.%(ext)s"'
 alias ytdla='youtube-dl --extract-audio --audio-format mp3 --output "~/Downloads/%(id)s.%(ext)s"'
 alias deploy='now && now alias && now rm --safe --yes `basename $(pwd)`' # be aware of folder name
