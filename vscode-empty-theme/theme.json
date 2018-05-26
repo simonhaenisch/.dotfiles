@@ -1,0 +1,10 @@
+{
+	"helpful_links": [
+		"http://manual.macromates.com/en/language_grammars#naming_conventions",
+		"https://www.sublimetext.com/docs/3/scope_naming.html"
+	],
+	"name": "Empty Theme",
+	"type": "dark",
+	"colors": {},
+	"tokenColors": []
+}

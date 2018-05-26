@@ -1,0 +1,22 @@
+{
+	"name": "empty-theme",
+	"displayName": "Empty Theme",
+	"description": "An empty theme made to be overwritten by user settings.",
+	"version": "1.0.0",
+	"publisher": "simonhaenisch",
+	"engines": {
+		"vscode": "^1.20.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Empty Theme",
+				"uiTheme": "vs-dark",
+				"path": "./theme.json"
+			}
+		]
+	}
+}
