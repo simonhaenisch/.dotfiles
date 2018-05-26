@@ -11,4 +11,4 @@ ln -vs `pwd`/bin/sublw /usr/local/bin/sublw
 ln -vs `pwd`/bin/codew /usr/local/bin/codew
 
 mkdir -p ~/.vscode/extensions
-ln -vs `pwd`/vscode-theme ~/.vscode/extensions/empty-theme
+ln -vs `pwd`/vscode-empty-theme ~/.vscode/extensions/empty-theme
