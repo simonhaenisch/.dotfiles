@@ -38,7 +38,7 @@ do
 done
 
 # install global npm packages
-npm install -g browser-sync cost-of-modules now prettier serve tldr
+npm install -g browser-sync now np prettier serve tldr
 
 # cleanup cache for brew and cask downloads
 brew cleanup -s
