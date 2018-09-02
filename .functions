@@ -6,6 +6,14 @@ function mkd() {
 	mkdir -p "$1" && cd "$1"
 }
 
+# https://github.com/sorin-ionescu/prezto/blob/master/modules/osx/functions/ql
+function ql {
+	if (( $# > 0 ))
+	then
+		qlmanage -p "$@" &> /dev/null
+	fi
+}
+
 function npmil() {
 	for package in "$@"
 	do
