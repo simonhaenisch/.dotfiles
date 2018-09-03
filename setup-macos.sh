@@ -32,7 +32,7 @@ done
 # install casks
 brew tap caskroom/cask
 brew tap caskroom/versions
-for cask in appcleaner bettertouchtool caffeine caprine caskroom/fonts/font-source-code-pro flux google-chrome google-drive-file-stream hyper imageoptim iterm2 macpass mpv qlcolorcode qlimagesize qlmarkdown qlstephen rocket skype slack sublime-text the-unarchiver thumbsup transmit4 ubersicht visual-studio-code whatsapp
+for cask in appcleaner bettertouchtool caffeine caprine caskroom/fonts/font-source-code-pro deezer flux google-chrome google-drive-file-stream hyper imageoptim iterm2 macpass mpv qlcolorcode qlimagesize qlmarkdown qlstephen rocket skype slack sublime-text the-unarchiver thumbsup transmit4 ubersicht visual-studio-code whatsapp
 do
 	brew cask install "$cask"
 done
