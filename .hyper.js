@@ -1,5 +1,6 @@
-// see https://hyper.is#cfg
-
+/**
+ * @see https://hyper.is#cfg
+ */
 module.exports = {
 	config: {
 		fontFamily: '"Source Code Pro", Menlo, monospace',
@@ -7,6 +8,10 @@ module.exports = {
 
 		cursorShape: 'UNDERLINE',
 		cursorBlink: true,
+
+		backgroundColor: '#1E1E1E',
+		borderColor: 'transparent',
+		scrollbarColor: 'whitesmoke',
 
 		env: {},
 
