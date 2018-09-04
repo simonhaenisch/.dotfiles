@@ -17,7 +17,7 @@ printf "alias update='`pwd`/scripts/update.sh'" >> ~/.host-specific-zshrc
 # git config
 read 'gituser?Git User Name: '
 git config --global user.name "$gituser"
-git config --global user.name "$gituser@users.noreply.github.com"
+git config --global user.email "$gituser@users.noreply.github.com"
 
 # install homebrew (http://brew.sh)
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -38,7 +38,7 @@ do
 done
 
 # install global npm packages
-npm install -g browser-sync now np prettier serve tldr xo
+npm install -g browser-sync now np prettier serve tldr
 
 # cleanup cache for brew and cask downloads
 brew cleanup -s
