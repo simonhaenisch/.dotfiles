@@ -9,9 +9,7 @@ module.exports = {
 		cursorShape: 'UNDERLINE',
 		cursorBlink: true,
 
-		backgroundColor: '#1E1E1E',
-		borderColor: 'transparent',
-		scrollbarColor: 'whitesmoke',
+		scrollbarColor: 'dimgray',
 
 		env: {},
 
@@ -19,7 +17,7 @@ module.exports = {
 		copyOnSelect: true,
 	},
 
-	plugins: ['hyper-named-css-colors', 'hyper-always-on-top', 'hyper-fading-scrollbar'],
+	plugins: ['hyper-named-css-colors', 'hyper-fading-scrollbar'],
 	localPlugins: [],
 	keymaps: {},
 };
