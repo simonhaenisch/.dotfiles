@@ -54,6 +54,7 @@ alias gda='git diff .'
 alias gdc='git diff --cached'
 
 # npm scripts
+alias i='npm install'
 alias r='npm run -s'
 alias s='npm start -s'
 alias t='npm test -s'
