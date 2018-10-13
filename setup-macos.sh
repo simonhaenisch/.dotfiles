@@ -24,7 +24,7 @@ git config --global user.email "$gituser@users.noreply.github.com"
 
 # install brew packages
 brew tap getantibody/homebrew-antibody
-for package in antibody grc git hub node openssl rsync ffmpeg youtube-dl
+for package in antibody grc git hub node openssl rsync ffmpeg youtube-dl zsh
 do
 	brew install "$package"
 done
