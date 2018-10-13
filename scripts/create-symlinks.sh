@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 ln -vs `pwd`/.aliases ~
 ln -vs `pwd`/.functions ~
 ln -vs `pwd`/.gitconfig ~

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 rm -v ~/.aliases
 rm -v ~/.functions
 rm -v ~/.gitconfig

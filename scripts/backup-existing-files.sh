@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 mv -iv ~/.aliases ~/.aliases.bak
 mv -iv ~/.functions ~/.functions.bak
 mv -iv ~/.gitconfig ~/.gitconfig.bak

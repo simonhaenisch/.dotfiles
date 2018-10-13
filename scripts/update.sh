@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # brew and casks
 /usr/local/bin/brew upgrade
 /usr/local/bin/brew cleanup -s

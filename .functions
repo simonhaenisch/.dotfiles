@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 function c() {
 	cd "$1" && l
 }
