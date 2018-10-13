@@ -3,7 +3,7 @@
  */
 module.exports = {
 	config: {
-		fontFamily: '"Source Code Pro", Menlo, monospace',
+		fontFamily: '"SF Mono", "Source Code Pro", Menlo, monospace',
 		fontSize: 11,
 
 		cursorShape: 'UNDERLINE',
