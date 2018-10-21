@@ -24,7 +24,7 @@ git config --global user.email "$gituser@users.noreply.github.com"
 
 # install brew packages
 brew tap getantibody/homebrew-antibody
-for package in antibody grc git hub node openssl rsync ffmpeg youtube-dl zsh
+for package in antibody grc git hub mas node openssl rsync ffmpeg youtube-dl zsh
 do
 	brew install "$package"
 done
@@ -36,6 +36,16 @@ for cask in appcleaner bettertouchtool caffeine caprine caskroom/fonts/font-sour
 do
 	brew cask install "$cask"
 done
+
+# install MAS apps
+read "signedIntoMas?Are you signed into the App Store so apps can be installed? (y/n): "
+if [[ "$signedIntoMas" =~^[Yy]$ ]]
+then
+	for appId in 409203825 407963104 404705039 1018390387 409201541 497799835 409183694 472790630 1176895641
+	do
+		mas install "$appId"
+	done
+fi
 
 # install global npm packages
 npm install -g browser-sync now np prettier serve tldr
