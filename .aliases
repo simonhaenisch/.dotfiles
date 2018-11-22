@@ -4,6 +4,7 @@
 alias -- -='cd -'
 alias ..='cd ..'
 alias cdh='cd ~'
+alias cdcloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 
 # system
 alias e='$EDITOR' # as editor shortcut
