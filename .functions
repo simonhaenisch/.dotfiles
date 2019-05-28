@@ -100,3 +100,12 @@ function colortest() {
 	done
 	echo
 }
+
+function convertToWav() {
+	extension=$1
+
+	for file in *$extension
+	do
+		ffmpeg -i "$file" "${file%$extension}.wav"
+	done
+}
