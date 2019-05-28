@@ -19,6 +19,7 @@ alias ln='ln -v'
 alias cb='pbcopy' # clipboard shortcut
 
 # utilities
+alias notes='e ~/.my-notes'
 alias lsps='grc ps -a -r -f -o %cpu,user | grep -v grep | grep'
 alias cp-p='rsync -WavP --human-readable --progress' # copy with progress
 alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
