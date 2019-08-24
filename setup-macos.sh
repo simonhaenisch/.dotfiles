@@ -24,7 +24,7 @@ git config --global user.email "$gituser@users.noreply.github.com"
 
 # install brew packages
 brew tap getantibody/homebrew-antibody
-for package in antibody grc git hub mas node openssl rsync ffmpeg youtube-dl zsh
+for package in antibody grc git hub mas node openssl ffmpeg youtube-dl zsh
 do
 	brew install "$package"
 done
@@ -32,7 +32,7 @@ done
 # install casks
 brew tap caskroom/cask
 brew tap caskroom/versions
-for cask in appcleaner bettertouchtool caffeine caprine caskroom/fonts/font-source-code-pro deezer flux google-chrome google-drive-file-stream hyper imageoptim iterm2 macpass mpv qlcolorcode qlimagesize qlmarkdown qlstephen rocket skype slack sublime-text the-unarchiver thumbsup transmit4 ubersicht visual-studio-code whatsapp
+for cask in appcleaner bettertouchtool caskroom/fonts/font-source-code-pro deezer flux franz google-chrome google-drive-file-stream hyper imageoptim iterm2 macpass mpv qlcolorcode qlimagesize qlmarkdown qlstephen sublime-text the-unarchiver thumbsup ubersicht visual-studio-code
 do
 	brew cask install "$cask"
 done
@@ -48,11 +48,10 @@ then
 fi
 
 # install global npm packages
-npm install -g browser-sync now np prettier serve tldr
+npm install -g now np serve tldr
 
 # cleanup cache for brew and cask downloads
 brew cleanup -s
-brew cask cleanup
 
 # load config
 source ~/.zshrc
@@ -63,9 +62,21 @@ if [[ "$cloneProjects" =~ ^[Yy]$ ]]
 then
 	mkdir ~/Projects
 
-	for repo in md-to-pdf simonhaenisch.com uebersicht-widgets
+	for repo in ionic-team/stencil md-to-pdf simonhaenisch.com uebersicht-widgets
 	do
 		git clone "$repo" "~/Projects/$repo"
+	done
+fi
+
+# create work folder and clone some work repos (using hub)
+read "cloneWorkProjects?Clone projects (make sure ssh public key is added to github)? (y/n): "
+if [[ "$cloneWorkProjects" =~ ^[Yy]$ ]]
+then
+	mkdir ~/Work
+
+	for repo in equippers/equippers.de jitbug/jitbug jitbug/jitbug.co.nz kleinholz-hamburg.de
+	do
+		git clone "$repo" "~/Work/$repo"
 	done
 fi
 
