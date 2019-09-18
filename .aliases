@@ -33,7 +33,7 @@ alias cask='brew cask'
 alias zap='brew cask zap'
 alias gcc11='gcc -std=c++11 -Wall'
 alias bs='browser-sync start --server --directory --files "*.js, *.html, *.css" --no-notify'
-alias ytdl='youtube-dl --format "best[ext=mp4]" --output "~/Downloads/%(id)s.%(ext)s"'
+alias ytdl='youtube-dl --format "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" --merge-output-format mp4 --output "~/Downloads/%(id)s.%(ext)s"'
 alias ytdla='youtube-dl --extract-audio --audio-format mp3 --output "~/Downloads/%(id)s.%(ext)s"'
 alias deploy='now && now alias && now rm --safe --yes `cat now.json | npx json name`'
 alias wttr='curl -s "wttr.in" | grep -v "^\w"'
@@ -43,6 +43,7 @@ alias com='npx cost-of-modules --no-install'
 alias loc-js='npx node-sloc . -x node_modules -d -e js'
 alias loc-css='npx node-sloc . -x node_modules -d -e css'
 alias dev-time='npx dev-time-cli'
+alias randomize-mac='sudo ifconfig en0 ether `openssl rand -hex 6 | sed "s/\(..\)/\1:/g; s/.$//"`'
 
 # git
 alias git=hub
