@@ -1,3 +1,5 @@
+set softwrap
+
 unbind M-B all
 bind M-B prevword main
 unbind M-F all
