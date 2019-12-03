@@ -112,9 +112,6 @@ then
 	# enable subpixel font rendering on non-Apple LCDs
 	defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
-	# disable sudden motion sensor (not needed for SSDs)
-	sudo pmset -a sms 0
-
 	# don't offer new disks for time machine backup
 	defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
@@ -155,10 +152,10 @@ then
 	defaults write com.apple.finder WarnOnEmptyTrash -bool false # no warning to empty trash
 
 	# dock settings
-	defaults write com.apple.dock autohide -bool true # auto-hide
+	defaults write com.apple.dock autohide -bool true # enable auto-hide
+	defaults write com.apple.dock autohide-delay -float 0.2 # set dock delay to 200 ms
+	defaults write com.apple.dock autohide-time-modifier -float 0 # disable dock show/hide animation
 	defaults write com.apple.dock show-process-indicators -bool true # show indicator for open apps
-	defaults write com.apple.dock autohide-delay -float 0 # remove dock delay
-	defaults write com.apple.dock autohide-time-modifier -float 0
 	defaults write com.apple.dock showhidden -bool true # make icons of hidden apps translucent
 
 	# kill effected apps
