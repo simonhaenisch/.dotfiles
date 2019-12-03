@@ -59,6 +59,7 @@ alias gst='git status'
 alias gd='git diff'
 alias gda='git diff .'
 alias gdc='git diff --cached'
+alias del-branches='git branch | grep -v "^*" | xargs git branch -d'
 
 # npm scripts
 alias i='npm install'
