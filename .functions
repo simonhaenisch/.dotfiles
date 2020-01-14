@@ -8,6 +8,7 @@ function mkd() {
 	mkdir -p "$1" && cd "$1"
 }
 
+# Preview in QuickLook
 # https://github.com/sorin-ionescu/prezto/blob/master/modules/osx/functions/ql
 function ql {
 	if (( $# > 0 ))
@@ -41,12 +42,12 @@ function npmcl() {
 	fi
 }
 
-function extractAttachment() {
+function extract-attachment() {
 	# e. g. extractAttachment mail.eml attachment.pdf
 	perl -MMIME::Base64 -ne 'print decode_base64($_)' < "$1" > "$2"
 }
 
-function rewriteGitAuthor() {
+function rewrite-git-author() {
 	# see https://help.github.com/articles/changing-author-info/
 	#
 	# $1: old email
@@ -72,7 +73,7 @@ function rewriteGitAuthor() {
 	echo "\t\tgit push --force --tags origin 'refs/heads/*'"
 }
 
-function printcolors() {
+function print-colors() {
 	echo
 	echo "\033[0mNC (No color)"
 	echo "\033[1;37mWHITE   \033[0;30mBLACK"
@@ -85,7 +86,7 @@ function printcolors() {
 	echo "\033[1;30mGRAY    \033[0;37mLIGHT_GRAY"
 }
 
-function colortest() {
+function color-test() {
 	icon="▲" # some alternatives: ∷, •, ⁃, ≡, ‹›, ⊙, ⋯, ⋮, ─, ▪, ◼, ★, ♦
 
 	echo
@@ -101,11 +102,32 @@ function colortest() {
 	echo
 }
 
-function convertToWav() {
+function convert-to-wav() {
 	extension=$1
 
 	for file in *$extension
 	do
 		ffmpeg -i "$file" "${file%$extension}.wav"
 	done
+}
+
+function create-editorconfig() {
+	cat > ./.editorconfig << EOL
+# https://editorconfig.org
+
+[*]
+charset = utf-8
+indent_style = tab
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+indent_style = space
+
+[package.json]
+indent_style = space
+EOL
 }
