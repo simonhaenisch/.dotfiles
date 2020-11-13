@@ -19,34 +19,6 @@ read 'gituser?Git User Name: '
 git config --global user.name "$gituser"
 git config --global user.email "$gituser@users.noreply.github.com"
 
-# install MAS apps
-read "signed_into_mas?Are you signed into the App Store so apps can be installed? (y/n): "
-if [[ "$signed_into_mas" =~ ^[Yy]$ ]]
-then
-	app_ids=(
-		409203825  # Numbers
-		497799835  # Xcode
-		409183694  # Keynote
-		409203825  # Numbers
-		1470584107 # Dato
-		404705039  # Graphic
-		1294126402 # HEIC Converter
-		1018390387 # Swift Note
-		409201541  # Pages
-		407963104  # Pixelmator
-		1176895641 # Spark
-		634148309  # Logic Pro X
-		472790630  # Bible Study
-		409183694  # Keynote
-		409201541  # Pages
-	)
-
-	for app_id in $app_ids
-	do
-		mas install "$app_id"
-	done
-fi
-
 # install homebrew (http://brew.sh)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
@@ -70,6 +42,31 @@ npm install -g serve vercel
 
 # load config
 source ~/.zshrc
+
+# install MAS apps
+read "signed_into_mas?Are you signed into the App Store so apps can be installed? (y/n): "
+if [[ "$signed_into_mas" =~ ^[Yy]$ ]]
+then
+	app_ids=(
+		497799835  # Xcode
+		409203825  # Numbers
+		409183694  # Keynote
+		409201541  # Pages
+		634148309  # Logic Pro X
+ 		1470584107 # Dato
+		1294126402 # HEIC Converter
+		1018390387 # Swift Note
+		404705039  # Graphic
+		407963104  # Pixelmator
+		1176895641 # Spark
+		472790630  # Bible Study
+	)
+
+	for app_id in $app_ids
+	do
+		mas install "$app_id"
+	done
+fi
 
 # create projects folder and clone some repos (using hub)
 read "clone_projects?Clone projects (make sure ssh public key is added to github)? (y/n): "
