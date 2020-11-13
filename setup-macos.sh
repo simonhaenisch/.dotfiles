@@ -19,62 +19,77 @@ read 'gituser?Git User Name: '
 git config --global user.name "$gituser"
 git config --global user.email "$gituser@users.noreply.github.com"
 
-# install homebrew (http://brew.sh)
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# install MAS apps
+read "signed_into_mas?Are you signed into the App Store so apps can be installed? (y/n): "
+if [[ "$signed_into_mas" =~ ^[Yy]$ ]]
+then
+	app_ids=(
+		409203825  # Numbers
+		497799835  # Xcode
+		409183694  # Keynote
+		409203825  # Numbers
+		1470584107 # Dato
+		404705039  # Graphic
+		1294126402 # HEIC Converter
+		1018390387 # Swift Note
+		409201541  # Pages
+		407963104  # Pixelmator
+		1176895641 # Spark
+		634148309  # Logic Pro X
+		472790630  # Bible Study
+		409183694  # Keynote
+		409201541  # Pages
+	)
 
-# install brew packages
-brew tap getantibody/homebrew-antibody
-for package in antibody grc git hub mas node openssl ffmpeg youtube-dl zsh
+	for app_id in $app_ids
+	do
+		mas install "$app_id"
+	done
+fi
+
+# install homebrew (http://brew.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# install brew formulae
+for formula in antibody cloudflared cocoapods ffmpeg gh git gradle grc hub mas nano nmap node openssl python vim wallpaper youtube-dl zsh
 do
-	brew install "$package"
+	brew install "$formula"
 done
 
 # install casks
-brew tap caskroom/cask
-brew tap caskroom/versions
-for cask in appcleaner bettertouchtool caskroom/fonts/font-source-code-pro deezer flux franz google-chrome google-drive-file-stream hyper imageoptim iterm2 macpass mpv qlcolorcode qlimagesize qlmarkdown qlstephen sublime-text the-unarchiver thumbsup ubersicht visual-studio-code
+for cask in ableton-live-intro android-studio anybar appcleaner behringer-x32-edit bettertouchtool clavia-nord-sound-manager figma firefox-developer-edition flux font-inter font-source-code-pro google-chrome google-drive-file-stream hyper imageoptim iterm2 jamulus kap macpass microsoft-teams mpv slack soundflower spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp zoomus
 do
 	brew cask install "$cask"
 done
 
-# install MAS apps
-read "signedIntoMas?Are you signed into the App Store so apps can be installed? (y/n): "
-if [[ "$signedIntoMas" =~^[Yy]$ ]]
-then
-	for appId in 409203825 407963104 404705039 1018390387 409201541 497799835 409183694 472790630 1176895641
-	do
-		mas install "$appId"
-	done
-fi
-
-# install global npm packages
-npm install -g now np serve tldr
-
 # cleanup cache for brew and cask downloads
 brew cleanup -s
+
+# install global npm packages
+npm install -g serve vercel
 
 # load config
 source ~/.zshrc
 
 # create projects folder and clone some repos (using hub)
-read "cloneProjects?Clone projects (make sure ssh public key is added to github)? (y/n): "
-if [[ "$cloneProjects" =~ ^[Yy]$ ]]
+read "clone_projects?Clone projects (make sure ssh public key is added to github)? (y/n): "
+if [[ "$clone_projects" =~ ^[Yy]$ ]]
 then
 	mkdir ~/Projects
 
-	for repo in ionic-team/stencil md-to-pdf simonhaenisch.com uebersicht-widgets
+	for repo in cloudcannon-boilerplate koa-shopify-auth md-to-pdf prettier-plugin-organize-imports simonhaenisch.com uebersicht-widgets ionic-team/ionic-framework ionic-team/stencil ionic-team/stencil-site
 	do
 		git clone "$repo" "~/Projects/$repo"
 	done
 fi
 
 # create work folder and clone some work repos (using hub)
-read "cloneWorkProjects?Clone projects (make sure ssh public key is added to github)? (y/n): "
-if [[ "$cloneWorkProjects" =~ ^[Yy]$ ]]
+read "clone_work_projects?Clone projects (make sure ssh public key is added to github)? (y/n): "
+if [[ "$clone_work_projects" =~ ^[Yy]$ ]]
 then
 	mkdir ~/Work
 
-	for repo in equippers/equippers.de jitbug/jitbug jitbug/jitbug.co.nz kleinholz-hamburg.de
+	for repo in equippers/equippers.de hoodify/hoodify jitbug/jitbug jitbug/jitbug-helpers jitbug/jitbug.co.nz kleinholz-hamburg.de super-cut
 	do
 		git clone "$repo" "~/Work/$repo"
 	done
@@ -83,9 +98,6 @@ fi
 read "writeDefaults?Write defaults? (y/n): "
 if [[ "$writeDefaults" =~ ^[Yy]$ ]]
 then
-	# enable dark mode
-	defaults write NSGlobalDomain AppleInterfaceStyle Dark
-
 	# save to disk (not iCloud) by default
 	defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
