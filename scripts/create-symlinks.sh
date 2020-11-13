@@ -14,3 +14,6 @@ ln -vs `pwd`/bin/codew /usr/local/bin/codew
 
 mkdir -p ~/.vscode/extensions
 ln -vs `pwd`/vscode-empty-theme ~/.vscode/extensions/empty-theme
+
+mkdir -p ~/.ssh
+ln -vs /Users/$USER/Documents/ssh-config ~/.ssh/config
