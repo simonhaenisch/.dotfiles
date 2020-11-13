@@ -43,6 +43,9 @@ npm install -g serve vercel
 # load config
 source ~/.zshrc
 
+# set desktop background to solid color
+wallpaper set-solid-color "#1E1E1E"
+
 # install MAS apps
 read "signed_into_mas?Are you signed into the App Store so apps can be installed? (y/n): "
 if [[ "$signed_into_mas" =~ ^[Yy]$ ]]
@@ -76,19 +79,19 @@ then
 
 	for repo in cloudcannon-boilerplate koa-shopify-auth md-to-pdf prettier-plugin-organize-imports simonhaenisch.com uebersicht-widgets ionic-team/ionic-framework ionic-team/stencil ionic-team/stencil-site
 	do
-		git clone "$repo" "~/Projects/$repo"
+		hub clone $repo ~/Projects/$repo
 	done
 fi
 
 # create work folder and clone some work repos (using hub)
-read "clone_work_projects?Clone projects (make sure ssh public key is added to github)? (y/n): "
+read "clone_work_projects?Clone work projects (make sure ssh public key is added to github)? (y/n): "
 if [[ "$clone_work_projects" =~ ^[Yy]$ ]]
 then
 	mkdir ~/Work
 
 	for repo in equippers/equippers.de hoodify/hoodify jitbug/jitbug jitbug/jitbug-helpers jitbug/jitbug.co.nz kleinholz-hamburg.de super-cut
 	do
-		git clone "$repo" "~/Work/$repo"
+		hub clone $repo ~/Work/$repo
 	done
 fi
 
@@ -96,76 +99,36 @@ read "writeDefaults?Write defaults? (y/n): "
 if [[ "$writeDefaults" =~ ^[Yy]$ ]]
 then
 	# save to disk (not iCloud) by default
-	defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+	defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -int 0
 
 	# save screenshots to downloads folder
 	defaults write com.apple.screencapture location ~/Downloads
 
-	# no ds_store on network or usb drives
-	defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-	defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-
-	# don't open photos app when devices are plugged in
-	defaults write com.apple.ImageCapture disableHotPlug -bool true
-
-	# no auto open for mounted transmit 4 drives (https://panic.com/blog/15-secrets-of-transmit/)
-	defaults write com.panic.transmit OpenMountedFinderWindow -bool NO
-	defaults write com.panic.transmitmenu OpenMountedFinderWindow -bool NO
-
-	# don't auto-rearrange spaces based on usage
-	defaults write com.apple.dock mru-spaces -bool false
-
-	# increase sound quality for bluetooth headphones/headsets
-	defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
-	# enable subpixel font rendering on non-Apple LCDs
-	defaults write NSGlobalDomain AppleFontSmoothing -int 1
-
-	# don't offer new disks for time machine backup
-	defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
 	# disable auto correct features
-	defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-	defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-	defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-	defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-	defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-	# trackpad: enable tap to click for this user and for the login screen
-	defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-	defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-
-	# disable natural scrolling
-	defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
-	# mute all system sounds, including volume change feedback
-	defaults write NSGlobalDomain com.apple.sound.beep.feedback -int 0
-	defaults write com.apple.systemsound com.apple.sound.beep.volume -float 0
-	defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -int 0
+	defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -int 0
+	defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -int 0
+	defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -int 0
+	defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -int 0
+	defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -int 0
 
 	# enable full keyboard access for all controls (e.g. tab through dialog options)
 	defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-	# use scroll gesture with the Ctrl (^) modifier key to zoom
-	defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-	defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-	defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
-
 	# finder settings
-	defaults write NSGlobalDomain AppleShowAllExtensions -bool true # show all extensions
-	defaults write com.apple.finder ShowStatusBar -bool true # show status bar
-	defaults write com.apple.finder ShowPathbar -bool true # show path bar
-	defaults write com.apple.finder _FXSortFoldersFirst -bool true # list folders first
+	defaults write NSGlobalDomain AppleShowAllExtensions -int 1 # show all extensions
+	defaults write com.apple.finder ShowStatusBar -int 1 # show status bar
+	defaults write com.apple.finder ShowPathbar -int 1 # show path bar
+	defaults write com.apple.finder _FXSortFoldersFirst -int 1 # list folders first
 	defaults write com.apple.finder FXDefaultSearchScope -string "SCcf" # search current folder by default
-	defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # no warning for changing extension
-	defaults write com.apple.finder WarnOnEmptyTrash -bool false # no warning to empty trash
+	defaults write com.apple.finder FXEnableExtensionChangeWarning -int 0 # no warning for changing extension
+	defaults write com.apple.finder WarnOnEmptyTrash -int 0 # no warning to empty trash
 
 	# dock settings
-	defaults write com.apple.dock autohide -bool true # enable auto-hide
+	defaults write com.apple.dock autohide -int 1 # enable auto-hide
 	defaults write com.apple.dock autohide-delay -float 0.2 # set dock delay to 200 ms
-	defaults write com.apple.dock autohide-time-modifier -float 0 # disable dock show/hide animation
-	defaults write com.apple.dock show-process-indicators -bool true # show indicator for open apps
-	defaults write com.apple.dock showhidden -bool true # make icons of hidden apps translucent
+	defaults write com.apple.dock autohide-time-modifier -int 0 # disable dock show/hide animation
+	defaults write com.apple.dock show-process-indicators -int 1 # show indicator for open apps
+	defaults write com.apple.dock showhidden -int 1 # make icons of hidden apps translucent
 
 	# kill effected apps
 	killall Finder
