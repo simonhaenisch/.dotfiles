@@ -29,10 +29,22 @@ do
 done
 
 # install casks
-for cask in ableton-live-intro android-studio anybar appcleaner behringer-x32-edit bettertouchtool clavia-nord-sound-manager figma firefox-developer-edition flux font-inter font-source-code-pro google-chrome google-drive-file-stream hyper imageoptim iterm2 jamulus kap macpass microsoft-teams mpv slack soundflower spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp zoomus
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-drivers
+brew tap homebrew/cask-fonts
+for cask in ableton-live-intro android-studio anybar appcleaner behringer-x32-edit bettertouchtool clavia-nord-sound-manager figma firefox-developer-edition flux font-inter font-source-code-pro google-chrome google-drive-file-stream hyper imageoptim iterm2 jamulus kap macpass microsoft-teams mpv slack spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp zoomus
 do
 	brew cask install "$cask"
 done
+
+# install casks that run an installer which requires the user's password
+for cask_with_installer in google-drive-file-stream zoomus
+do
+	brew cask install cask_with_installer
+done
+
+# soundflower needs special permissions
+brew cask install soundflower
 
 # cleanup cache for brew and cask downloads
 brew cleanup -s
