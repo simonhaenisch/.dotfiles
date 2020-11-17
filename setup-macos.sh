@@ -23,7 +23,7 @@ git config --global user.email "$gituser@users.noreply.github.com"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # install brew formulae
-for formula in antibody cloudflared cocoapods ffmpeg gh git gradle grc hub mas nano nmap node openssl python vim wallpaper youtube-dl zsh
+for formula in antibody cloudflare/cloudflare/cloudflared cocoapods ffmpeg gh git gradle grc hub mas nano nmap node openssl python vim wallpaper youtube-dl zsh
 do
 	brew install "$formula"
 done
