@@ -12,5 +12,6 @@
 	recurseSubmodules = on-demand
 [pull]
 	recurseSubmodules = on-demand
+	rebase = true
 [core]
 	excludesfile = ~/.gitignore
