@@ -4,6 +4,7 @@
 	ignore = update-index --skip-worktree
 	unignore = update-index --no-skip-worktree
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg2 = log --color --graph --pretty=format:'%Cred%h%Creset %Cgreen%ci%Creset %Cblue<%an>%Creset %s %C(yellow)%d%Creset' --abbrev-commit
 	checkout-pr = "!f() { git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	add-upstream = "!f() { git remote add upstream git@github.com:$1.git }; f"
 [push]
