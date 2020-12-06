@@ -2,6 +2,13 @@
 
 # inspired by https://mths.be/macos and others
 
+# we need full disk access, otherwise `~` won't work
+read "full_disk_access?Does this terminal have full disk access? (y/n): "
+if [[ ! "$full_disk_access" =~ ^[Yy]$ ]]
+then
+	exit
+fi
+
 # change shell
 chsh -s /bin/zsh
 
@@ -32,19 +39,19 @@ done
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers
 brew tap homebrew/cask-fonts
-for cask in ableton-live-intro android-studio anybar appcleaner behringer-x32-edit bettertouchtool clavia-nord-sound-manager figma firefox-developer-edition flux font-inter font-source-code-pro google-chrome google-drive-file-stream hyper imageoptim iterm2 jamulus kap macpass microsoft-teams mpv slack spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp zoomus
+for cask in ableton-live-intro android-studio anybar appcleaner behringer-x32-edit bettertouchtool clavia-nord-sound-manager figma firefox-developer-edition flux font-inter font-source-code-pro google-chrome hyper imageoptim iterm2 jamulus kap macpass microsoft-teams mpv slack spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp
 do
-	brew cask install "$cask"
+	brew install --cask "$cask"
 done
 
-# install casks that run an installer which requires the user's password
+# install casks that run an installer which requires password
 for cask_with_installer in google-drive-file-stream zoomus
 do
-	brew cask install cask_with_installer
+	brew install --cask "$cask_with_installer"
 done
 
 # soundflower needs special permissions
-brew cask install soundflower
+brew install --cask soundflower
 
 # cleanup cache for brew and cask downloads
 brew cleanup -s
