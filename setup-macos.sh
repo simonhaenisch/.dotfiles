@@ -45,7 +45,7 @@ do
 done
 
 # install casks that run an installer which requires password
-for cask_with_installer in google-drive-file-stream zoomus
+for cask_with_installer in google-drive-file-stream zoom
 do
 	brew install --cask "$cask_with_installer"
 done
