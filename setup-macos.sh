@@ -9,9 +9,6 @@ then
 	exit
 fi
 
-# change shell
-chsh -s /bin/zsh
-
 # backup existing dotfiles
 source "scripts/backup-existing-files.sh"
 
@@ -21,13 +18,10 @@ source "scripts/create-symlinks.sh"
 # create host–specific zshrc file
 printf "alias update='`pwd`/scripts/update.sh'" >> ~/.host-specific-zshrc
 
-# git config
-read 'gituser?Git User Name: '
-git config --global user.name "$gituser"
-git config --global user.email "$gituser@users.noreply.github.com"
-
 # install homebrew (http://brew.sh)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+eval $(/opt/homebrew/bin/brew shellenv)
 
 # install brew formulae
 for formula in antibody cloudflare/cloudflare/cloudflared cocoapods deno ffmpeg gh git gradle grc hub mas nano nmap node openssl python vim wallpaper youtube-dl zsh
@@ -38,20 +32,16 @@ done
 # install casks
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers
-brew tap homebrew/cask-fonts
-for cask in ableton-live-intro android-studio anybar appcleaner behringer-x32-edit bettertouchtool clavia-nord-sound-manager figma firefox-developer-edition flux font-inter font-source-code-pro google-chrome hyper imageoptim iterm2 jamulus kap macpass microsoft-teams mpv slack spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp
+for cask in ableton-live-intro anybar appcleaner behringer-x32-edit bettertouchtool figma firefox-developer-edition flux google-chrome hyper imageoptim iterm2 kap macpass mpv slack spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp
 do
 	brew install --cask "$cask"
 done
 
 # install casks that run an installer which requires password
-for cask_with_installer in google-drive-file-stream zoom
+for cask_with_installer in google-drive
 do
 	brew install --cask "$cask_with_installer"
 done
-
-# soundflower needs special permissions
-brew install --cask soundflower
 
 # cleanup cache for brew and cask downloads
 brew cleanup -s
@@ -70,10 +60,6 @@ read "signed_into_mas?Are you signed into the App Store so apps can be installed
 if [[ "$signed_into_mas" =~ ^[Yy]$ ]]
 then
 	app_ids=(
-		497799835  # Xcode
-		409203825  # Numbers
-		409183694  # Keynote
-		409201541  # Pages
 		634148309  # Logic Pro X
  		1470584107 # Dato
 		1294126402 # HEIC Converter
@@ -90,27 +76,38 @@ then
 	done
 fi
 
-# create projects folder and clone some repos (using hub)
+# git config
+read 'gituser?Git User Name: '
+git config --global user.name "$gituser"
+git config --global user.email "$gituser@users.noreply.github.com"
+
+# generate ssh key for github
+ssh-keygen -t ed25519 -C "$gituser@users.noreply.github.com"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
+gh auth login
+
+# create projects folder and clone some repos
 read "clone_projects?Clone projects (make sure ssh public key is added to github)? (y/n): "
 if [[ "$clone_projects" =~ ^[Yy]$ ]]
 then
-	mkdir ~/Projects
+	# mkdir ~/Projects
 
-	for repo in cloudcannon-boilerplate koa-shopify-auth md-to-pdf prettier-plugin-organize-imports simonhaenisch.com uebersicht-widgets ionic-team/ionic-framework ionic-team/stencil ionic-team/stencil-site
+	for repo in md-to-pdf prettier-plugin-organize-imports simonhaenisch.com uebersicht-widgets
 	do
-		hub clone $repo ~/Projects/$repo
+		gh repo clone $repo ~/Projects/$repo
 	done
 fi
 
-# create work folder and clone some work repos (using hub)
+# create work folder and clone some work repos
 read "clone_work_projects?Clone work projects (make sure ssh public key is added to github)? (y/n): "
 if [[ "$clone_work_projects" =~ ^[Yy]$ ]]
 then
-	mkdir ~/Work
+	# mkdir ~/Work
 
-	for repo in equippers/equippers.de hoodify/hoodify jitbug/jitbug jitbug/jitbug-helpers jitbug/jitbug.co.nz kleinholz-hamburg.de super-cut
+	for repo in equippers/equippers.de euphoria-group/hoodify euphoria-group/geizhalsify
 	do
-		hub clone $repo ~/Work/$repo
+		gh repo clone $repo ~/Work/$repo
 	done
 fi
 

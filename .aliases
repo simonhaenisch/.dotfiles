@@ -45,7 +45,6 @@ alias dev-time='npx dev-time-cli'
 alias randomize-mac='sudo ifconfig en0 ether `openssl rand -hex 6 | sed "s/\(..\)/\1:/g; s/.$//"`'
 
 # git
-alias git=hub
 alias add='git add'
 alias clone='git clone'
 alias commit='git commit'

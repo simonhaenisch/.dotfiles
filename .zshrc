@@ -1,3 +1,6 @@
+# brew env
+eval $(/opt/homebrew/bin/brew shellenv)
+
 # exports
 export EDITOR=nano # other options: 'sublw', 'codew'
 export CLICOLOR=true
