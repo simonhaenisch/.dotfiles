@@ -18,6 +18,11 @@ source "scripts/create-symlinks.sh"
 # create host–specific zshrc file
 printf "alias update='`pwd`/scripts/update.sh'" >> ~/.host-specific-zshrc
 
+# install command line developer tools
+xcode-select --install
+read "After xcode-select has finished installing, press ENTER to continue... "
+sudo xcodebuild -license accept
+
 # install homebrew (http://brew.sh)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
