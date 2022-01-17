@@ -59,7 +59,8 @@ alias gda='git diff .'
 alias gdc='git diff --cached'
 alias del-branches='git branch | grep -v "^*" | xargs git branch -d'
 
-# npm scripts
+# npm
+alias b='npm run build --silent'
 alias i='npm install'
 alias r='npm run --silent'
 alias s='npm start --silent'
@@ -67,7 +68,6 @@ alias t='npm test --silent'
 alias publish='npx np'
 
 # npm package management
-alias npmi='npm install'
 alias npmie='npm install --save-exact'
 alias npmr='npm remove'
 alias npmins='npm install --no-save'
