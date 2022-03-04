@@ -11,7 +11,6 @@ source <(antibody init)
 antibody bundle mafredri/zsh-async
 antibody bundle zsh-users/zsh-autosuggestions
 antibody bundle zsh-users/zsh-history-substring-search
-antibody bundle zsh-users/zsh-syntax-highlighting
 antibody bundle sindresorhus/pure
 
 # customize prompt (see https://wiki.archlinux.org/index.php/zsh#Customized_prompt)
@@ -43,3 +42,7 @@ source `brew --prefix`/etc/grc.zsh
 
 # source npm completions (allows to auto-complete npm scripts)
 source <(npm completion)
+
+# source zsh-syntax-highlighting at last
+# see https://github.com/zsh-users/zsh-syntax-highlighting#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
+antibody bundle zsh-users/zsh-syntax-highlighting
