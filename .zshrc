@@ -13,6 +13,7 @@ tabs -2
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+setopt HIST_IGNORE_SPACE
 
 # key bindings for history substring search (arrow up/down)
 bindkey "^[[A" history-substring-search-up
