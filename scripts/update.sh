@@ -7,3 +7,6 @@ brew cleanup -s
 # npm and global packages
 npm install -g npm@latest
 npm update -g
+
+# zplug plugins
+zplug update

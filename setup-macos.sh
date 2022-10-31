@@ -57,6 +57,9 @@ npm install -g serve vercel
 # load config
 source ~/.zshrc
 
+# install zsh plugins
+zplug install
+
 # set desktop background to solid color
 wallpaper set-solid-color "#1E1E1E"
 
@@ -66,7 +69,7 @@ if [[ "$signed_into_mas" =~ ^[Yy]$ ]]
 then
 	app_ids=(
 		634148309  # Logic Pro X
- 		1470584107 # Dato
+		1470584107 # Dato
 		1294126402 # HEIC Converter
 		1018390387 # Swift Note
 		404705039  # Graphic

@@ -34,13 +34,21 @@ source `brew --prefix`/etc/grc.zsh
 # source npm completions (allows to auto-complete npm scripts)
 source <(npm completion)
 
-# antibody
-source <(antibody init)
-antibody bundle mafredri/zsh-async
-antibody bundle sindresorhus/pure
-antibody bundle zsh-users/zsh-history-substring-search
-antibody bundle zsh-users/zsh-autosuggestions
-antibody bundle zsh-users/zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
+# init zplug
+export ZPLUG_HOME=`brew --prefix`/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# pure prompt
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 # customize prompt (see https://wiki.archlinux.org/index.php/zsh#Customized_prompt)
 PROMPT='%(?.%F{green}.%F{red}❯%F{green})❯%f '
+
+# zsh plugins (run `zplug install` after adding/modifying)
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2 # https://github.com/zsh-users/zsh-syntax-highlighting#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
+
+# source plugins
+zplug load
