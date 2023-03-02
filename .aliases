@@ -61,6 +61,7 @@ alias del-branches='git branch | grep -v "^*" | xargs git branch -d'
 
 # npm
 alias b='npm run build --silent'
+alias d='npm run dev --silent'
 alias i='npm install'
 alias r='npm run --silent'
 alias s='npm start --silent'
