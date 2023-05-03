@@ -42,9 +42,6 @@ source $ZPLUG_HOME/init.zsh
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
-# customize prompt (see https://wiki.archlinux.org/index.php/zsh#Customized_prompt)
-PROMPT='%(?.%F{green}.%F{red}❯%F{green})❯%f '
-
 # zsh plugins (run `zplug install` after adding/modifying)
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
@@ -52,7 +49,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2 # https://github.com/zsh-user
 
 # check for missing plugins to install
 if ! zplug check; then
-    zplug install
+	zplug install
 fi
 
 # source plugins
