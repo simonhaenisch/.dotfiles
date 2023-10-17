@@ -1,5 +1,5 @@
 # brew env
-eval $(`which brew` shellenv)
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # exports
 export EDITOR=nano # other options: 'sublw', 'codew'
@@ -11,9 +11,9 @@ tabs -2
 
 # history
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
+HISTSIZE=12000
 SAVEHIST=10000
-setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_SPACE SHARE_HISTORY
 
 # key bindings for history substring search (arrow up/down)
 bindkey "^[[A" history-substring-search-up
