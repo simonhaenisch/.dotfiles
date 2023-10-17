@@ -4,7 +4,6 @@ rm -v ~/.aliases
 rm -v ~/.functions
 rm -v ~/.gitconfig
 rm -v ~/.gitignore
-rm -v ~/.hyper.js
 rm -v ~/.nanorc
 rm -v ~/.zshrc
 

@@ -37,7 +37,7 @@ done
 # install casks
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers
-for cask in ableton-live-intro anybar appcleaner behringer-x32-edit bettertouchtool figma firefox-developer-edition flux google-chrome hyper imageoptim iterm2 kap macpass mpv slack spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp
+for cask in ableton-live-intro anybar appcleaner behringer-x32-edit bettertouchtool figma firefox-developer-edition flux google-chrome imageoptim iterm2 kap macpass mpv slack spotify sublime-text the-unarchiver thumbsup ubersicht visual-studio-code whatsapp
 do
 	brew install --cask "$cask"
 done
