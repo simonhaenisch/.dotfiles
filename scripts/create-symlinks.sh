@@ -9,8 +9,8 @@ ln -vs `pwd`/.nanorc ~
 ln -vs `pwd`/.vimrc ~
 ln -vs `pwd`/.zshrc ~
 
-ln -vs `pwd`/bin/sublw /usr/local/bin/sublw
-ln -vs `pwd`/bin/codew /usr/local/bin/codew
+sudo ln -vs `pwd`/bin/sublw /usr/local/bin/sublw
+sudo ln -vs `pwd`/bin/codew /usr/local/bin/codew
 
 mkdir -p ~/.vscode/extensions
 ln -vs `pwd`/vscode-empty-theme ~/.vscode/extensions/empty-theme
