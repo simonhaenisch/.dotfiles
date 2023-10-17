@@ -8,10 +8,11 @@
 	checkout-pr = "!f() { git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	add-upstream = "!f() { git remote add upstream git@github.com:$1.git }; f"
 [push]
+	autoSetupRemote = true
 	default = simple
 	recurseSubmodules = on-demand
 [pull]
-	recurseSubmodules = on-demand
 	ff = only
+	recurseSubmodules = on-demand
 [core]
 	excludesfile = ~/.gitignore
