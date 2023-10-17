@@ -24,12 +24,12 @@ read "After xcode-select has finished installing, press ENTER to continue... "
 sudo xcodebuild -license accept
 
 # install homebrew (http://brew.sh)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # install brew formulae
-for formula in antibody cloudflare/cloudflare/cloudflared cocoapods deno ffmpeg gh git gradle grc hub mas nano nmap node openssl python vim wallpaper youtube-dl zsh
+for formula in cloudflare/cloudflare/cloudflared ffmpeg gh git grc mas nano nmap node python vim wallpaper youtube-dl zplug zsh
 do
 	brew install "$formula"
 done
