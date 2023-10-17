@@ -5,6 +5,7 @@ rm -v ~/.functions
 rm -v ~/.gitconfig
 rm -v ~/.gitignore
 rm -v ~/.nanorc
+rm -v ~/.vimrc
 rm -v ~/.zshrc
 
 rm -v /usr/local/bin/sublw
