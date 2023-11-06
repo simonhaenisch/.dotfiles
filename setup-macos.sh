@@ -29,7 +29,7 @@ sudo xcodebuild -license accept
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # install brew formulae
-for formula in cloudflare/cloudflare/cloudflared ffmpeg gh git grc mas nano nmap node python vim wallpaper youtube-dl zplug zsh
+for formula in cloudflare/cloudflare/cloudflared ffmpeg gh git grc mas nano nmap node python vim wallpaper youtube-dl antidote zsh
 do
 	brew install "$formula"
 done
@@ -56,9 +56,6 @@ npm install -g serve vercel
 
 # load config
 source ~/.zshrc
-
-# install zsh plugins
-zplug install
 
 # set desktop background to solid color
 wallpaper set-solid-color "#1E1E1E"

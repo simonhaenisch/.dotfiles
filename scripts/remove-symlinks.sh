@@ -7,6 +7,7 @@ rm -v ~/.gitignore
 rm -v ~/.nanorc
 rm -v ~/.vimrc
 rm -v ~/.zshrc
+rm -v ~/.zsh_plugins.txt
 
 rm -v /usr/local/bin/sublw
 rm -v /usr/local/bin/codew

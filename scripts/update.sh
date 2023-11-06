@@ -8,5 +8,5 @@ brew cleanup -s
 npm install -g npm@latest
 npm update -g
 
-# zplug plugins
-zplug update
+# zsh plugins
+antidote update

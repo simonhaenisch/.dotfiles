@@ -8,6 +8,7 @@ echo "\n# other\nnode_modules/" >> ~/.gitignore
 ln -vs `pwd`/.nanorc ~
 ln -vs `pwd`/.vimrc ~
 ln -vs `pwd`/.zshrc ~
+ln -vs `pwd`/.zsh_plugins.txt ~
 
 sudo ln -vs `pwd`/bin/sublw /usr/local/bin/sublw
 sudo ln -vs `pwd`/bin/codew /usr/local/bin/codew
