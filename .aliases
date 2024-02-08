@@ -7,41 +7,63 @@ alias ...='cd ../..'
 alias cdh='cd ~'
 alias cdcloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 
-# system
+# files
 alias e='$EDITOR' # as editor shortcut
 alias ls='/bin/ls -F' # reset to overwrite grc; F: suffix for dirs/executables/symlinks
-alias l='ls -Alh' # all, long, human readable (includes F from ls)
-alias mv='mv -v'
-alias rm='rm -vr'
-alias rmf='/bin/rm -rf' # non-verbose
-alias cp='cp -vr'
-alias ln='ln -v'
-alias cb='pbcopy' # clipboard shortcut
+alias l='ls -Alh' # all, long, human readable (includes F from ls alias)
+alias mv='mv -v' # verbose
+alias rm='rm -vr' # verbose and recursive
+alias rmf='/bin/rm -rf' # non-verbose, recurvise and force
+alias cp='cp -vr' # verbose and recursive
+alias ln='ln -v' # verbose
+alias cb='pbcopy' # clip-board shortcut
 
-# utilities
-alias notes='e ~/.my-notes'
-alias lsps='grc ps -a -r -f -o %cpu,user | grep -v grep | grep'
-alias cp-p='rsync -WavP --human-readable --progress' # copy with progress
-alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g' # default hibernate
-alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g' # full hibernate
+# copy with progress
+alias cp-p='rsync -WavP --human-readable --progress'
+
+# default hibernate
+alias pmset3='sudo pmset -a hibernatemode 3 && pmset -g'
+
+# full hibernate
+alias pmset25='sudo pmset -a hibernatemode 25 && pmset -g'
+
+# lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+# recursively delete all .DS_Store files from the current folder
 alias dsstore-clean='find . -type f -name .DS_Store -ls -delete'
+
+# name server look-up
 alias nslookup='host -t NS'
+
+# generate a random password and copy it to the clipboard
 alias password-gen='pw=`openssl rand -base64 12`; printf "$pw" | pbcopy; printf "$pw (copied to clipboard)"; unset pw'
+
+# copy the ssh public key to the clipboard
 alias public-key='cat ~/.ssh/id_rsa.pub | pbcopy; printf "public key copied to clipboard"'
-alias cask='brew cask'
-alias zap='brew cask zap'
-alias gcc11='gcc -std=c++11 -Wall'
-alias bs='browser-sync start --server --directory --files "*.js, *.html, *.css" --no-notify'
+
+# youtube download
 alias ytdl='youtube-dl --format "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" --merge-output-format mp4 --output "~/Downloads/%(id)s.%(ext)s"'
+
+# youtube download audio-only
 alias ytdla='youtube-dl --extract-audio --audio-format mp3 --output "~/Downloads/%(id)s.%(ext)s"'
-alias deploy='now && now alias && now rm --safe --yes `cat now.json | npx json name`'
-alias wttr='curl -s "wttr.in" | grep -v "^\w"'
+
+# weather forcast in the terminal
+alias wttr='curl -s wttr.in/Berlin | grep -v Follow'
+
+# json prettyify the given string
 alias json-prettify='node -e "console.log(JSON.stringify(JSON.parse(process.argv[1]), null, 2))"'
+
+# print current date in ms since epoch
 alias date-now='node -e "console.log(Date.now())"'
+
+# check cost of modules
 alias com='npx cost-of-modules --no-install'
+
+# check lines of code
 alias loc='npx cloc'
-alias dev-time='npx dev-time-cli'
+
+# assign a random mac address
 alias randomize-mac='sudo ifconfig en0 ether `openssl rand -hex 6 | sed "s/\(..\)/\1:/g; s/.$//"`'
 
 # git
@@ -51,11 +73,12 @@ alias commit='git commit'
 alias pull='git pull'
 alias push='git push'
 alias checkout='git checkout'
+alias switch='git switch'
+alias main="git switch \$(git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4)"
 alias merge='git merge'
 alias stash='git stash'
 alias gst='git status'
 alias gd='git diff'
-alias gda='git diff .'
 alias gdc='git diff --cached'
 alias del-branches='git branch | grep -v "^*" | xargs git branch -d'
 
@@ -66,7 +89,6 @@ alias i='npm install'
 alias r='npm run --silent'
 alias s='npm start --silent'
 alias t='npm test --silent'
-alias publish='npx np'
 
 # npm package management
 alias npmie='npm install --save-exact'
