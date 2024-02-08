@@ -37,3 +37,5 @@ source <(npm completion)
 # zsh plugins via antidote
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 antidote load ~/.zsh_plugins.txt
+
+zstyle :prompt:pure:prompt:success color yellow
