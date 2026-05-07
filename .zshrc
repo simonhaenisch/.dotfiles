@@ -2,9 +2,16 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # exports
-export EDITOR=nano # other options: 'sublw', 'codew'
 export CLICOLOR=true
 export LANG='en_US.UTF-8'
+
+# use code as editor from vscode terminals, else nano
+if [[ "$TERM_PROGRAM" = "vscode" ]]
+then
+  export EDITOR='code -w'
+else
+  export EDITOR=nano
+fi
 
 # set tab width
 tabs -2
